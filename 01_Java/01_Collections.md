@@ -5,4 +5,4 @@
     
 2. Object数组
 3. 对象锁 JVM实现
-
+4. HashMap不是collections 是map
