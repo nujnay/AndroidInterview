@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
 class Test_01{
     public static void main(String[]args){
@@ -11,5 +8,7 @@ class Test_01{
         HashMap<String, String> hashMap = new HashMap<>();
 
         HashSet<String> hashSet = new HashSet<>();
+
+        LinkedList<String> list = new LinkedList<>();
     }
 }
