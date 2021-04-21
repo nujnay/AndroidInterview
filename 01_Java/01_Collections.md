@@ -7,7 +7,7 @@
 3. 对象锁 JVM实现
 4. HashMap不是collections 是map
 5. list，queue，set三个implement 
-6. 
-   - queue: FIFO, 
+6. Collection
+   - queue: FIFO, A collection designed for holding elements prior to processing
    - set: A collection that contains no duplicate elements.
    - deque A linear collection that supports element insertion and removal at both ends
