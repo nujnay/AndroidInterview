@@ -11,4 +11,7 @@
    - queue: FIFO,  the head of this queue
    - set: A collection that contains no duplicate elements.
    - deque A linear collection that supports element insertion and removal at both ends
-   - list 
+   - list
+7. how set judge if two elements are same
+   - hashset with hashmap key
+   - 
