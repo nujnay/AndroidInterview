@@ -15,4 +15,3 @@
 7. how set judge if two elements are same
    - hashset with hashmap key
    - treeset with TreeMap
-   - class of treemap key must implement the Comparable

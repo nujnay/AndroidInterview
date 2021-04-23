@@ -7,10 +7,16 @@ public class Test_02 {
     public static void main(String[] args) {
         HashSet<String> hashSet = new HashSet<>();
         hashSet.add("");
-        TreeSet<String> treeSet = new TreeSet<>();
-        treeSet.add("");
-        TreeMap<String, String> treeMap = new TreeMap<>();
-        treeMap.put("", "");
+        TreeSet<Test2> treeSet = new TreeSet<>();
+        treeSet.add(new Test2());
+        treeSet.add(new Test2());
+
+        TreeMap<Test2, String> treeMap = new TreeMap<>();
+        treeMap.put(new Test2(), "");
+    }
+
+    static class Test2 {
+
     }
 
     class EqualTest {
