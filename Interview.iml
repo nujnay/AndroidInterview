@@ -6,7 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/01_Java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/02_Kotlin" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/03_Algorithm" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/04_Core" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/04_Android_Core" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
