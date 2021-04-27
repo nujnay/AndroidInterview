@@ -5,7 +5,7 @@ import java.util.Locale;
 public class Test_02 {
     public static void main(String[] args) {
         Solution02_02 solution = new Solution02_02();
-        System.out.println(solution.isPalindrome("OP"));
+        System.out.println(solution.isPalindrome("0P"));
     }
 
 
@@ -172,6 +172,36 @@ class Solution02_02 {
             return true;
         }
         if (c == 'z') {
+            return true;
+        }
+        if (c == '1') {
+            return true;
+        }
+        if (c == '2') {
+            return true;
+        }
+        if (c == '3') {
+            return true;
+        }
+        if (c == '4') {
+            return true;
+        }
+        if (c == '5') {
+            return true;
+        }
+        if (c == '6') {
+            return true;
+        }
+        if (c == '7') {
+            return true;
+        }
+        if (c == '8') {
+            return true;
+        }
+        if (c == '9') {
+            return true;
+        }
+        if (c == '0') {
             return true;
         }
         return false;
