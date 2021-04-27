@@ -4,7 +4,7 @@ import java.util.Locale;
 
 public class Test_02 {
     public static void main(String[] args) {
-        Solution02 solution = new Solution02();
+        Solution02_02 solution = new Solution02_02();
         System.out.println(solution.isPalindrome("A E a "));
     }
 
@@ -68,7 +68,9 @@ class Solution02_02 {
         int end = chars.length - 1;
         for (int i = 0; i < chars.length; i++) {
             boolean check = true;
-            if (isAlphanumeric(chars[front])) {
+            char frontC = toLowerCase(chars[front]);
+            char endC = toLowerCase(chars[end]);
+            if (isAlphanumeric(frontC)) {
 
             } else {
                 check = false;
@@ -80,8 +82,11 @@ class Solution02_02 {
                 check = false;
                 end--;
             }
-            if (check && toLowerCase(chars[front]) != toLowerCase(chars[end])) {
+            if (check && frontC != endC) {
                 return false;
+            } else {
+                front++;
+                end--;
             }
             if (front >= end) {
                 return false;
