@@ -5,7 +5,6 @@ import java.util.Locale;
 public class Test_02 {
     public static void main(String[] args) {
         Solution02_02 solution = new Solution02_02();
-//        System.out.println(solution.isPalindrome("A E ,a"));
         System.out.println(solution.isPalindrome("OP"));
     }
 
