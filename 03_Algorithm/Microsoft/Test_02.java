@@ -84,7 +84,7 @@ class Solution02_02 {
             }
             if (check && frontC != endC) {
                 return false;
-            } else {
+            } else if (check){
                 front++;
                 end--;
             }
