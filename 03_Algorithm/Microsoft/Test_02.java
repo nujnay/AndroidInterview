@@ -63,44 +63,27 @@ class Solution02 {
 class Solution02_02 {
     //"A man, a plan, a canal: Panama"
     public boolean isPalindrome(String s) {
-        char[] chars = s
-                .replace(" ", "")
-                .replace("`", "")
-                .replace("`", "")
-                .replace("~", "")
-                .replace("!", "")
-                .replace("@", "")
-                .replace("#", "")
-                .replace("$", "")
-                .replace("%", "")
-                .replace("^", "")
-                .replace("&", "")
-                .replace("*", "")
-                .replace("(", "")
-                .replace(")", "")
-                .replace("_", "")
-                .replace("-", "")
-                .replace("=", "")
-                .replace("+", "")
-                .replace("{", "")
-                .replace("[", "")
-                .replace("}", "")
-                .replace("]", "")
-                .replace(":", "")
-                .replace(";", "")
-                .replace("'", "")
-                .replace("\"", "")
-                .replace("<", "")
-                .replace(",", "")
-                .replace(">", "")
-                .replace(".", "")
-                .replace("?", "")
-                .replace("/", "")
-                .toLowerCase()
-                .toCharArray();
-
+        char[] chars = s.toCharArray();
+        int front = 0;
+        int end = chars.length - 1;
         for (int i = 0; i < chars.length; i++) {
-            if (chars[i] != chars[chars.length - 1 - i]) {
+            boolean check = true;
+            if (isAlphanumeric(chars[front])) {
+
+            } else {
+                check = false;
+                front++;
+            }
+            if (isAlphanumeric(chars[end])) {
+
+            } else {
+                check = false;
+                end--;
+            }
+            if (check && toLowerCase(chars[front]) != toLowerCase(chars[end])) {
+                return false;
+            }
+            if (front >= end) {
                 return false;
             }
         }
