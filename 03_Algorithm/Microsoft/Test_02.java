@@ -5,7 +5,8 @@ import java.util.Locale;
 public class Test_02 {
     public static void main(String[] args) {
         Solution02_02 solution = new Solution02_02();
-        System.out.println(solution.isPalindrome("A E a "));
+//        System.out.println(solution.isPalindrome("A E ,a"));
+        System.out.println(solution.isPalindrome("OP"));
     }
 
 
@@ -76,7 +77,7 @@ class Solution02_02 {
                 check = false;
                 front++;
             }
-            if (isAlphanumeric(chars[end])) {
+            if (isAlphanumeric(endC)) {
 
             } else {
                 check = false;
@@ -84,7 +85,7 @@ class Solution02_02 {
             }
             if (check && frontC != endC) {
                 return false;
-            } else if (check){
+            } else if (check) {
                 front++;
                 end--;
             }
