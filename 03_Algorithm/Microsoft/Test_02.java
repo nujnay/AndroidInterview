@@ -89,7 +89,7 @@ class Solution02_02 {
                 end--;
             }
             if (front >= end) {
-                return false;
+                break;
             }
         }
         return true;
