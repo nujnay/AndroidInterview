@@ -21,9 +21,8 @@ class Solution04 {
     public String reverseWords(String s) {
         char[] chars = s.toCharArray();
         Node[] nodes = new Node[chars.length];
-        Integer[] nodesHigh = new Integer[chars.length];
+        int[] nodesHigh = new int[chars.length];
         Node currentNode = new Node();
-        Integer high = new Integer(0);
         int nodeNumber = 0;
         boolean lastIsSpace = false;
         for (int i = 0; i < chars.length; i++) {
@@ -33,8 +32,7 @@ class Solution04 {
                 } else {
                     currentNode = new Node();
                     nodes[nodeNumber] = currentNode;
-                    high = 1;
-                    nodesHigh[nodeNumber] = high;
+                    nodesHigh[nodeNumber] = 1;
                     nodeNumber++;
                     currentNode.current = chars[chars.length - 1 - i];
                 }
@@ -46,13 +44,12 @@ class Solution04 {
                         lastIsSpace = false;
                         currentNode = new Node();
                         nodes[nodeNumber] = currentNode;
-                        high = 1;
-                        nodesHigh[nodeNumber] = high;
+                        nodesHigh[nodeNumber] = 1;
                         nodeNumber++;
                     } else {
                         Node newN = new Node();
                         newN.current = chars[chars.length - 1 - i];
-                        high = high + 1;
+                        nodesHigh[nodeNumber] = nodesHigh[nodeNumber] + 1;
                         currentNode.next = newN;
                         currentNode = newN;
                     }
