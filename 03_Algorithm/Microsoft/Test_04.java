@@ -18,7 +18,9 @@ class Solution04 {
     public String reverseWords(String s) {
         char[] chars = s.toCharArray();
         Node[] nodes = new Node[chars.length];
+        Integer[] nodesHigh = new Integer[chars.length];
         Node currentNode = new Node();
+        Integer high = new Integer(0);
         int nodeNumber = 0;
         boolean lastIsSpace = false;
         for (int i = 0; i < chars.length; i++) {
@@ -28,6 +30,8 @@ class Solution04 {
                 } else {
                     currentNode = new Node();
                     nodes[nodeNumber] = currentNode;
+                    high = 1;
+                    nodesHigh[nodeNumber] = high;
                     nodeNumber++;
                     currentNode.current = chars[chars.length - 1 - i];
                 }
@@ -39,15 +43,39 @@ class Solution04 {
                     lastIsSpace = false;
                     currentNode = new Node();
                     nodes[nodeNumber] = currentNode;
+                    high = 1;
+                    nodesHigh[nodeNumber] = high;
                     nodeNumber++;
                 } else {
                     Node newN = new Node();
+                    high = high + 1;
                     currentNode.next = newN;
                     currentNode = newN;
                 }
             }
         }
-        return new String(chars).trim();
+        char[] result = new char[chars.length];
+        int resultIndex = 0;
+        for (int j = 0; j < nodes.length; j++) {
+            if (nodes[j] != null) {
+                Integer nowHigh = nodesHigh[j];
+                char[] now = new char[nowHigh];
+                Node nowN = nodes[j];
+                for (int a = 0; a < nowHigh; a++) {
+                    now[nowHigh - 1 - a] = nowN.current;
+                    nowN = nowN.next;
+                }
+                if (resultIndex != 0) {
+                    result[resultIndex] = ' ';
+                    resultIndex++;
+                }
+                for (int b = 0; b < now.length; b++) {
+                    result[resultIndex] = now[b];
+                    resultIndex++;
+                }
+            }
+        }
+        return new String(result);
     }
 
     class Node {
