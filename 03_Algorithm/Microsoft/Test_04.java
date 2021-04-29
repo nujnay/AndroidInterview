@@ -51,6 +51,7 @@ class Solution04 {
                         nodeNumber++;
                     } else {
                         Node newN = new Node();
+                        newN.current = chars[chars.length - 1 - i];
                         high = high + 1;
                         currentNode.next = newN;
                         currentNode = newN;
