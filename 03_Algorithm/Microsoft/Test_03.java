@@ -33,12 +33,101 @@ public class Test_03 {
 }
 class Solution {
     public int myAtoi(String s) {
-        String after = s.replace(" ", "");
+        char[] chars = s.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            if (i == 0) {
+                if (isAlphanumeric(chars[i])) {
+                    return 0;
+                }
+            }
+        }
         try {
             Integer integer = Integer.valueOf(after);
             return integer;
         } catch (Exception e) {
             return 0;
         }
+    }
+
+    private boolean isAlphanumeric(char c) {
+        if (c == 'a') {
+            return true;
+        }
+        if (c == 'b') {
+            return true;
+        }
+        if (c == 'c') {
+            return true;
+        }
+        if (c == 'd') {
+            return true;
+        }
+        if (c == 'e') {
+            return true;
+        }
+        if (c == 'f') {
+            return true;
+        }
+        if (c == 'g') {
+            return true;
+        }
+        if (c == 'h') {
+            return true;
+        }
+        if (c == 'i') {
+            return true;
+        }
+        if (c == 'j') {
+            return true;
+        }
+        if (c == 'k') {
+            return true;
+        }
+        if (c == 'l') {
+            return true;
+        }
+        if (c == 'm') {
+            return true;
+        }
+        if (c == 'n') {
+            return true;
+        }
+        if (c == 'o') {
+            return true;
+        }
+        if (c == 'p') {
+            return true;
+        }
+        if (c == 'q') {
+            return true;
+        }
+        if (c == 'r') {
+            return true;
+        }
+        if (c == 's') {
+            return true;
+        }
+        if (c == 't') {
+            return true;
+        }
+        if (c == 'u') {
+            return true;
+        }
+        if (c == 'v') {
+            return true;
+        }
+        if (c == 'w') {
+            return true;
+        }
+        if (c == 'x') {
+            return true;
+        }
+        if (c == 'y') {
+            return true;
+        }
+        if (c == 'z') {
+            return true;
+        }
+        return false;
     }
 }
