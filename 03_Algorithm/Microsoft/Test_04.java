@@ -17,6 +17,14 @@ public class Test_04 {
 
 class Solution04 {
     public void reverseString(char[] s) {
-
+        for (int i = 0; i < s.length; i++) {
+            char front = s[i];
+            char end = s[s.length - 1 - i];
+            s[i] = end;
+            s[s.length - 1 - i] = front;
+            if (i >= (s.length - 1) / 2) {
+                break;
+            }
+        }
     }
 }
