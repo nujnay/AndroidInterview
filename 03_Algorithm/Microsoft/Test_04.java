@@ -18,10 +18,33 @@ class Solution04 {
     public String reverseWords(String s) {
         char[] chars = s.toCharArray();
         Node[] nodes = new Node[chars.length];
-        Node currentNode;
+        Node currentNode = new Node();
+        int nodeNumber = 0;
+        boolean lastIsSpace = false;
         for (int i = 0; i < chars.length; i++) {
+            if (i == 0) {
+                if (chars[chars.length - 1 - i] == ' ') {
+                    lastIsSpace = true;
+                } else {
+                    currentNode = new Node();
+                    nodes[nodeNumber] = currentNode;
+                    nodeNumber++;
+                    currentNode.current = chars[chars.length - 1 - i];
+                }
+            }
             if (chars[chars.length - 1 - i] == ' ') {
-                currentNode = new Node();
+                lastIsSpace = true;
+            } else {
+                if (lastIsSpace) {
+                    lastIsSpace = false;
+                    currentNode = new Node();
+                    nodes[nodeNumber] = currentNode;
+                    nodeNumber++;
+                } else {
+                    Node newN = new Node();
+                    currentNode.next = newN;
+                    currentNode = newN;
+                }
             }
         }
         return new String(chars).trim();
