@@ -24,8 +24,21 @@ package Microsoft;
  *
  */
 public class Test_03 {
+    public static void main(String[] args) {
+
+    }
 
 
 
-
+}
+class Solution {
+    public int myAtoi(String s) {
+        String after = s.replace(" ", "");
+        try {
+            Integer integer = Integer.valueOf(after);
+            return integer;
+        } catch (Exception e) {
+            return 0;
+        }
+    }
 }
