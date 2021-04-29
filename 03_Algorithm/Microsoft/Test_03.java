@@ -33,7 +33,7 @@ public class Test_03 {
 
 
 }
-class Solution {
+class Solution03 {
     public int myAtoi(String str) {
         Automaton automaton = new Automaton();
         int length = str.length();
