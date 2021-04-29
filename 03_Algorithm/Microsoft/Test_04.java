@@ -17,18 +17,11 @@ public class Test_04 {
 class Solution04 {
     public String reverseWords(String s) {
         char[] chars = s.toCharArray();
-        Node startNode = new Node();
-        Node endNode = new Node();
+        Node[] nodes = new Node[chars.length];
+        Node currentNode;
         for (int i = 0; i < chars.length; i++) {
-            boolean move = false;
-            if (chars[i] == ' ') {
-                move = true;
-            }
             if (chars[chars.length - 1 - i] == ' ') {
-                move = true;
-            }
-            if (!move) {
-                Node node = new Node();
+                currentNode = new Node();
             }
         }
         return new String(chars).trim();
