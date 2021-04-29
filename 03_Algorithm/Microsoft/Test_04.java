@@ -1,5 +1,8 @@
 package Microsoft;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 /**
  * Write a function that reverses a string. The input string is given as an array of characters s.
  * <p>
@@ -13,7 +16,7 @@ package Microsoft;
 public class Test_04 {
     public static void main(String[] args) {
         Solution04 solution04 = new Solution04();
-        System.out.println(solution04.reverseWords("A Apple"));
+        System.out.println(solution04.reverseWords("   A Apple"));
     }
 }
 
@@ -43,13 +46,14 @@ class Solution04 {
                     if (lastIsSpace) {
                         lastIsSpace = false;
                         currentNode = new Node();
+                        currentNode.current = chars[chars.length - 1 - i];
                         nodes[nodeNumber] = currentNode;
                         nodesHigh[nodeNumber] = 1;
                         nodeNumber++;
                     } else {
                         Node newN = new Node();
                         newN.current = chars[chars.length - 1 - i];
-                        nodesHigh[nodeNumber] = nodesHigh[nodeNumber] + 1;
+                        nodesHigh[nodeNumber - 1] = nodesHigh[nodeNumber - 1] + 1;
                         currentNode.next = newN;
                         currentNode = newN;
                     }
@@ -57,10 +61,11 @@ class Solution04 {
             }
         }
         char[] result = new char[chars.length];
+        char[] resultTrue;
         int resultIndex = 0;
         for (int j = 0; j < nodes.length; j++) {
             if (nodes[j] != null) {
-                Integer nowHigh = nodesHigh[j];
+                int nowHigh = nodesHigh[j];
                 char[] now = new char[nowHigh];
                 Node nowN = nodes[j];
                 for (int a = 0; a < nowHigh; a++) {
@@ -77,7 +82,8 @@ class Solution04 {
                 }
             }
         }
-        return new String(result);
+        resultTrue = Arrays.copyOf(result, resultIndex);
+        return new String(resultTrue);
     }
 
     class Node {
