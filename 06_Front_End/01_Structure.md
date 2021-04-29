@@ -10,7 +10,9 @@
 6. 浏览器加载js的方法位置
    如果位置上上面的方法要调用下面的方法是可以的吗
 7. package-lock.json里面的东西一单生成就固定了吗，是谁来控制里面的版本号之类的   
-
+8. 遍历删除map中的数据
+   key的type还有 value的type需要一致吗
+   
 完成:
 4. export 为什么还有导出 类似public
 2. package-lock.json是自动生成的吗 三万多行
