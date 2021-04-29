@@ -12,7 +12,7 @@
 7. package-lock.json里面的东西一单生成就固定了吗，是谁来控制里面的版本号之类的   
 8. 遍历删除map中的数据
    key的type还有 value的type需要一致吗
-   
+   map迭代是有顺序的吗
 完成:
 4. export 为什么还有导出 类似public
 2. package-lock.json是自动生成的吗 三万多行
