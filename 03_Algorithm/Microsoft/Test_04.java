@@ -38,22 +38,23 @@ class Solution04 {
                     nodeNumber++;
                     currentNode.current = chars[chars.length - 1 - i];
                 }
-            }
-            if (chars[chars.length - 1 - i] == ' ') {
-                lastIsSpace = true;
             } else {
-                if (lastIsSpace) {
-                    lastIsSpace = false;
-                    currentNode = new Node();
-                    nodes[nodeNumber] = currentNode;
-                    high = 1;
-                    nodesHigh[nodeNumber] = high;
-                    nodeNumber++;
+                if (chars[chars.length - 1 - i] == ' ') {
+                    lastIsSpace = true;
                 } else {
-                    Node newN = new Node();
-                    high = high + 1;
-                    currentNode.next = newN;
-                    currentNode = newN;
+                    if (lastIsSpace) {
+                        lastIsSpace = false;
+                        currentNode = new Node();
+                        nodes[nodeNumber] = currentNode;
+                        high = 1;
+                        nodesHigh[nodeNumber] = high;
+                        nodeNumber++;
+                    } else {
+                        Node newN = new Node();
+                        high = high + 1;
+                        currentNode.next = newN;
+                        currentNode = newN;
+                    }
                 }
             }
         }
