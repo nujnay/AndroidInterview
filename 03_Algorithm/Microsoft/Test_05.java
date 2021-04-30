@@ -69,3 +69,10 @@ class Solution05 {
         char value;
     }
 }
+
+//两次翻转
+class Solution05_02 {
+    public void reverseWords(char[] s) {
+
+    }
+}
