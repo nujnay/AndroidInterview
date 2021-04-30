@@ -108,6 +108,19 @@ class Solution05_02 {
 //两次翻转
 class Solution05_03 {
     public void reverseWords(char[] s) {
+        int n=s.length,l=0;
+        for(int r=0;r<n;r++)
+            if(s[r]==' '){
+                reverse(s,l,r-1);
+                l=r+1;
+            }
+        reverse(s,l,n-1);
+        reverse(s,0,n-1);
+    }
 
+    private void reverse(char[]s,int l,int r) {
+        for(char c=' ';l<r;l++,r--){
+            c=s[l];s[l]=s[r];s[r]=c;
+        }
     }
 }
