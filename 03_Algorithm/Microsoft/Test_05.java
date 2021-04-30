@@ -2,8 +2,8 @@ package Microsoft;
 
 public class Test_05 {
     public static void main(String[] args) {
-        Solution05 solution05 = new Solution05();
-        char[] result = new char[]{'a', ' ', 'b'};
+        Solution05_02 solution05 = new Solution05_02();
+        char[] result = new char[]{'a', 'b', 'c', ' ', 'w'};
         solution05.reverseWords(result);
         for (char a : result) {
             System.out.println(a);
@@ -73,6 +73,30 @@ class Solution05 {
 //两次翻转
 class Solution05_02 {
     public void reverseWords(char[] s) {
+        int start = 0;
+        for (int i = 0; i < s.length; i++) {
+            if (i <= (s.length - 1) / 2) {
+                char frontChar = s[i];
+                char endChar = s[s.length - 1 - i];
+                s[i] = endChar;
+                s[s.length - 1 - i] = frontChar;
+            }
+            if (s[i] == ' ') {
+                reverseOneWord(s, start, i - 1);
+                start = i + 1;
+            }
+            if (i == s.length - 1) {
+                reverseOneWord(s, start, i);
+            }
+        }
+    }
 
+    public void reverseOneWord(char[] s, int start, int end) {
+        for (int a = 0; a < end - start; a++) {
+            char frontChar = s[start + a];
+            char endChar = s[end - a];
+            s[start + a] = endChar;
+            s[end - a] = frontChar;
+        }
     }
 }
