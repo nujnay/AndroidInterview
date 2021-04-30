@@ -2,7 +2,7 @@ package Microsoft;
 
 public class Test_05 {
     public static void main(String[] args) {
-        Solution05_02 solution05 = new Solution05_02();
+        Solution05_03 solution05 = new Solution05_03();
         char[] result = new char[]{'t', 'h', 'e', ' ', 's', 'k', 'y', ' ', 'i', 's', ' ', 'b', 'l', 'u', 'e'};
         solution05.reverseWords(result);
         for (char a : result) {
@@ -109,11 +109,12 @@ class Solution05_02 {
 class Solution05_03 {
     public void reverseWords(char[] s) {
         int n = s.length, l = 0;
-        for (int r = 0; r < n; r++)
+        for (int r = 0; r < n; r++) {
             if (s[r] == ' ') {
                 reverse(s, l, r - 1);
                 l = r + 1;
             }
+        }
         reverse(s, l, n - 1);
         reverse(s, 0, n - 1);
     }
