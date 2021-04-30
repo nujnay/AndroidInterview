@@ -3,8 +3,11 @@ package Microsoft;
 public class Test_05 {
     public static void main(String[] args) {
         Solution05 solution05 = new Solution05();
-        solution05.reverseWords(new char[]{'1', '2', '3'});
-
+        char[] result = new char[]{'t', 'h', 'e', ' ', 's', 'k', 'y', ' ', 'i', 's', ' ', 'b', 'l', 'u', 'e'};
+        solution05.reverseWords(result);
+        for (char a : result) {
+            System.out.println(a);
+        }
     }
 }
 
@@ -19,10 +22,9 @@ class Solution05 {
             if (i == s.length - 1) {
                 tmp = new Node();
                 tmp.value = s[s.length - 1];
-                tmp.high = 1;
                 continue;
             }
-            if (s[s.length - 1] == ' ') {
+            if (s[i] == ' ') {
                 resultNode[nodeIndex] = tmp;
                 nodeIndex++;
                 isSpaceLast = true;
@@ -30,23 +32,39 @@ class Solution05 {
                 if (isSpaceLast) {
                     isSpaceLast = false;
                     tmp = new Node();
-                    tmp.value = s[s.length - 1];
-                    tmp.high = 1;
+                    tmp.value = s[i];
                 } else {
                     Node current = new Node();
-                    current.value = s[s.length - 1];
-                    current.high = tmp.high++;
+                    current.value = s[i];
                     current.father = tmp;
                     tmp = current;
+                    if (i == 0) {
+                        resultNode[nodeIndex] = tmp;
+                    }
                 }
             }
         }
-
+        char[] result = new char[s.length];
+        int index = 0;
+        for (int i = 0; i < resultNode.length; i++) {
+            if (resultNode[i] != null) {
+                Node now = resultNode[i];
+                do {
+                    result[index] = now.value;
+                    index++;
+                    now = now.father;
+                } while (now != null);
+                if (index < s.length) {
+                    result[index] = ' ';
+                    index++;
+                }
+            }
+        }
+        s = result;
     }
 
     class Node {
         Node father;
         char value;
-        int high;
     }
 }
