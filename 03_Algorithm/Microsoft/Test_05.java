@@ -3,7 +3,7 @@ package Microsoft;
 public class Test_05 {
     public static void main(String[] args) {
         Solution05 solution05 = new Solution05();
-        char[] result = new char[]{'t', 'h', 'e', ' ', 's', 'k', 'y', ' ', 'i', 's', ' ', 'b', 'l', 'u', 'e'};
+        char[] result = new char[]{'a', ' ', 'b'};
         solution05.reverseWords(result);
         for (char a : result) {
             System.out.println(a);
@@ -33,6 +33,9 @@ class Solution05 {
                     isSpaceLast = false;
                     tmp = new Node();
                     tmp.value = s[i];
+                    if (i == 0) {
+                        resultNode[nodeIndex] = tmp;
+                    }
                 } else {
                     Node current = new Node();
                     current.value = s[i];
@@ -44,23 +47,21 @@ class Solution05 {
                 }
             }
         }
-        char[] result = new char[s.length];
         int index = 0;
         for (int i = 0; i < resultNode.length; i++) {
             if (resultNode[i] != null) {
                 Node now = resultNode[i];
                 do {
-                    result[index] = now.value;
+                    s[index] = now.value;
                     index++;
                     now = now.father;
                 } while (now != null);
                 if (index < s.length) {
-                    result[index] = ' ';
+                    s[index] = ' ';
                     index++;
                 }
             }
         }
-        s = result;
     }
 
     class Node {
