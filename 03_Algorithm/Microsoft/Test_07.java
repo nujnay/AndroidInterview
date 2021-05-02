@@ -75,7 +75,7 @@ class Solution07 {
             if (row - 1 >= 0) {
                 if (status[row - 1][column + 1]) {
                     leftRow = row - 1;
-                    checkRightTop(status, row - 1, column + 1);
+                    checkLeftBottom(status, row - 1, column + 1);
                 }
             }
         }
