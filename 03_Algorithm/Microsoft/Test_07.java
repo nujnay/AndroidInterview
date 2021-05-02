@@ -36,6 +36,7 @@ class Solution07 {
                 }
             }
         }
+        System.out.println(maxLeftRow + "||" + maxRightRow + 1);
         return s.substring(maxLeftRow, maxRightRow + 1);
     }
 
