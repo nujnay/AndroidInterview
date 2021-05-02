@@ -3,7 +3,7 @@ package Microsoft;
 public class Test_07 {
     public static void main(String[] args) {
         Solution07 solution07 = new Solution07();
-        solution07.longestPalindrome("");
+        System.out.println(solution07.longestPalindrome("aassete"));
     }
     //aba
 
@@ -48,7 +48,7 @@ class Solution07 {
                 }
             }
         }
-        return s.substring(maxLeftRow, maxRightRow);
+        return s.substring(maxLeftRow, maxRightRow + 1);
     }
 
     int rightRow = 0;
