@@ -3,7 +3,7 @@ package Microsoft;
 public class Test_07 {
     public static void main(String[] args) {
         Solution07 solution07 = new Solution07();
-        System.out.println(solution07.longestPalindrome("aassete"));
+        System.out.println(solution07.longestPalindrome("aacabdkacaa"));
     }
     //aba
 
@@ -34,7 +34,7 @@ class Solution07 {
                                 leftRow = i;
                                 checkRightTop(status, i, j);
                                 checkLeftBottom(status, i, j);
-                                if (rightRow != i || leftRow != j) {
+                                if (rightRow != i || leftRow != i) {
                                     if (rightRow - leftRow + 1 > macLength) {
                                         macLength = rightRow - leftRow + 1;
                                         maxRightRow = rightRow;
@@ -48,6 +48,7 @@ class Solution07 {
                 }
             }
         }
+        System.out.println(maxLeftRow + "||" + maxRightRow);
         return s.substring(maxLeftRow, maxRightRow + 1);
     }
 
@@ -74,7 +75,7 @@ class Solution07 {
             if (row - 1 >= 0) {
                 if (status[row - 1][column + 1]) {
                     leftRow = row - 1;
-                    checkRightTop(status, row + 1, column - 1);
+                    checkRightTop(status, row - 1, column + 1);
                 }
             }
         }
