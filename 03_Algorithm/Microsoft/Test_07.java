@@ -35,6 +35,7 @@ class Solution07 {
                     maxLeftRow = leftRow;
                 }
             }
+            rightRow = i;
         }
         System.out.println(maxLeftRow + "||" + maxRightRow + 1);
         return s.substring(maxLeftRow, maxRightRow + 1);
