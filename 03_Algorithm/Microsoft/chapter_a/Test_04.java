@@ -1,4 +1,4 @@
-package Microsoft;
+package Microsoft.chapter_a;
 
 import java.util.Arrays;
 

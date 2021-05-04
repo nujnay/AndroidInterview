@@ -1,4 +1,4 @@
-package Microsoft;
+package Microsoft.chapter_a;
 
 public class Test_07 {
     public static void main(String[] args) {

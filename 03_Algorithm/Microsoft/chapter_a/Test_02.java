@@ -1,6 +1,4 @@
-package Microsoft;
-
-import java.util.Locale;
+package Microsoft.chapter_a;
 
 public class Test_02 {
     public static void main(String[] args) {
