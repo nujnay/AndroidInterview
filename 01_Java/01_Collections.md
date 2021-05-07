@@ -18,7 +18,11 @@
    - class of treemap key must implement the Comparable
 8. stack底层是数组 System.arraycopy()   
    - how resize in stack
-9. LinkedMap, how to create a LinkedMap   
+9. LinkedHashMap, how to create a LinkedHashMap
+
+
+
+
 
 
 
