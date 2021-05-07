@@ -19,7 +19,7 @@
 8. stack底层是数组 System.arraycopy()   
    - how resize in stack
 9. LinkedHashMap, how to create a LinkedHashMap
-10. what is different between HashMap and LinkedHashMap
+10. what is the difference between HashMap and LinkedHashMap
 
 
 
