@@ -7,6 +7,7 @@ public class Test_03 {
         System.out.println((new Random()).nextInt(1));
         Stack<String> strings = new Stack<>();
         strings.pop();
-        LinkedHashMap
+        LinkedHashMap<String, String> linkedHashMap = new LinkedHashMap();
+        linkedHashMap.put("", "");
     }
 }
