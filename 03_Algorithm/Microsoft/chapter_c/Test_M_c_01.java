@@ -7,8 +7,8 @@ public class Test_M_c_01 {
         TreeNode treeNode4 = new TreeNode();
         TreeNode treeNode6 = new TreeNode();
         TreeNode treeNode7 = new TreeNode();
-        treeNode5.val = 5;
-        treeNode4.val = 4;
+        treeNode5.val = 4;
+        treeNode4.val = 5;
         treeNode6.val = 6;
         treeNode7.val = 7;
         treeNode6.left = treeNode4;
