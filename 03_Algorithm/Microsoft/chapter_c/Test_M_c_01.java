@@ -29,11 +29,15 @@ public class Test_M_c_01 {
  */
 
 class Solution_M_c_01 {
+    int a = 0;
     public boolean isValidBST(TreeNode root) {
-        return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+        boolean retult = isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+        System.out.println(a);
+        return retult;
     }
 
     public boolean isValidBST(TreeNode node, long lower, long upper) {
+        a++;
         if (node == null) {
             return true;
         }
