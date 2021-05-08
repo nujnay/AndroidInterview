@@ -14,7 +14,7 @@ public class Test_M_c_01 {
         treeNode6.left = treeNode4;
         treeNode6.right = treeNode7;
         treeNode5.right = treeNode6;
-        Solution_M_c_01_02 solution_m_c_01 = new Solution_M_c_01_02();
+        Solution_M_c_01 solution_m_c_01 = new Solution_M_c_01();
         System.out.println(solution_m_c_01.isValidBST(treeNode5));
     }
 }
