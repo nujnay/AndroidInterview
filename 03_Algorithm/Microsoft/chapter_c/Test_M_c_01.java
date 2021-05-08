@@ -7,6 +7,10 @@ public class Test_M_c_01 {
         TreeNode treeNode4 = new TreeNode();
         TreeNode treeNode6 = new TreeNode();
         TreeNode treeNode7 = new TreeNode();
+        treeNode5.val = 5;
+        treeNode4.val = 4;
+        treeNode6.val = 6;
+        treeNode7.val = 7;
         treeNode6.left = treeNode4;
         treeNode6.right = treeNode7;
         treeNode5.right = treeNode6;
@@ -14,6 +18,7 @@ public class Test_M_c_01 {
         System.out.println(solution_m_c_01.isValidBST(treeNode5));
     }
 }
+
 class Solution_M_c_01 {
     public boolean isValidBST(TreeNode root) {
         return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
