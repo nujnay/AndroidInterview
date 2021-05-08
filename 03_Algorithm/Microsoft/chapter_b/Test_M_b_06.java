@@ -16,7 +16,7 @@ public class Test_M_b_06 {
  * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+class Solution_M_b_06 {
     public ListNode mergeKLists(ListNode[] lists) {
         ListNode now = null;
         for (int i = 0; i < lists.length; i++) {
