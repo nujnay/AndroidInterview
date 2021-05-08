@@ -19,6 +19,15 @@ public class Test_M_c_01 {
     }
 }
 
+/**
+ *  5
+ *   \
+ *    6
+ *      \
+ *     4  7
+ *
+ */
+
 class Solution_M_c_01 {
     public boolean isValidBST(TreeNode root) {
         return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
