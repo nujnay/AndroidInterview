@@ -32,10 +32,10 @@ public class Test_M_c_01 {
 
 class Solution_M_c_01 {
     public boolean isValidBST(TreeNode root) {
-        return isValidBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+        return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 
-    public boolean isValidBST(TreeNode root, int min, int max) {
+    public boolean isValidBST(TreeNode root, long min, long max) {
         if (root == null) {
             return true;
         }
