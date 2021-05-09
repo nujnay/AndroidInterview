@@ -1,6 +1,8 @@
 package Microsoft.chapter_c;
 
 
+import com.sun.source.tree.Tree;
+
 public class Test_M_c_01 {
     public static void main(String[] args) {
         TreeNode treeNode5 = new TreeNode();
@@ -29,64 +31,19 @@ public class Test_M_c_01 {
  */
 
 class Solution_M_c_01 {
-    int a = 0;
     public boolean isValidBST(TreeNode root) {
-        boolean retult = isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
-        System.out.println(a);
-        return retult;
+        return isValidBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
-    public boolean isValidBST(TreeNode node, long lower, long upper) {
-        a++;
-        if (node == null) {
+    public boolean isValidBST(TreeNode root, int min, int max) {
+        if (root == null) {
             return true;
         }
-        if (node.val <= lower || node.val >= upper) {
+        if (root.val <= min || root.val >= max) {
             return false;
         }
-        return isValidBST(node.left, lower, node.val) && isValidBST(node.right, node.val, upper);
-    }
-}
-
-class Solution_M_c_01_02 {
-    public boolean isValidBST(TreeNode root) {
-        return checkLeft(root, root.val) && checkRight(root, root.val);
-    }
-
-    public boolean checkLeft(TreeNode root, int rootVal) {
-        boolean allIsRight = true;
-        if (root.right != null) {
-            if (!checkRight(root, root.val)) {
-                allIsRight = false;
-            }
-        }
-        if (root.left != null) {
-            if (root.left.val > rootVal) {
-                return false;
-            }
-            if (checkLeft(root, root.val)) {
-                allIsRight = false;
-            }
-        }
-        return allIsRight;
+        return isValidBST(root.left, min, root.val) && isValidBST(root.right, root.val, max);
     }
 
 
-    public boolean checkRight(TreeNode root, int rootVal) {
-        boolean allIsRight = true;
-        if (root.right != null) {
-            if (root.right.val < rootVal) {
-                return false;
-            }
-            if (!checkRight(root, root.val)) {
-                allIsRight = false;
-            }
-        }
-        if (root.left != null) {
-            if (checkLeft(root, root.val)) {
-                allIsRight = false;
-            }
-        }
-        return allIsRight;
-    }
 }
