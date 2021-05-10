@@ -7,11 +7,11 @@ public class M_A_08 {
     }
 }
 
-class Solution_M_A_08 {
-    public String longestPalindrome(String s) {
-
-    }
-}
+//class Solution_M_A_08 {
+//    public String longestPalindrome(String s) {
+//
+//    }
+//}
 //https://leetcode-cn.com/problems/longest-palindromic-substring/solution/qu-jian-dpjian-dan-yi-dong-de-er-wei-tu-cvmnw/
 class Solution_M_A_08_02 {
 
