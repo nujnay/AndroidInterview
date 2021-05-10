@@ -12,7 +12,7 @@ class Solution_M_A_08 {
 
     }
 }
-
+//https://leetcode-cn.com/problems/longest-palindromic-substring/solution/qu-jian-dpjian-dan-yi-dong-de-er-wei-tu-cvmnw/
 class Solution_M_A_08_02 {
 
     public String longestPalindrome(String s) {
