@@ -24,6 +24,9 @@ class Solution_M_d_01 {
         map.put('8', "tuv");
         map.put('9', "wxyz");
         char[] digis = digits.toCharArray();
+        if (digis.length == 0) {
+            return result;
+        }
         letterCombinations(0, digis, map, result, "");
         return result;
     }
