@@ -42,17 +42,22 @@ class Solution_M_d_02 {
                     if (index < target.length) {
                         char now = board[indexRow][indexColumn];
                         if (target[index] == now) {
+                            System.out.println(now + "||" + index);
                             if (index == target.length - 1) {
                                 if (!result.contains(new String(target))) {
                                     result.add(new String(target));
                                 }
                                 return;
                             }
-                            used[indexRow][indexColumn] = true;
-                            checkAllOrientation(board, target, index + 1, indexRow + 1, indexColumn, result, used);
-                            checkAllOrientation(board, target, index + 1, indexRow - 1, indexColumn, result, used);
-                            checkAllOrientation(board, target, index + 1, indexRow, indexColumn + 1, result, used);
-                            checkAllOrientation(board, target, index + 1, indexRow, indexColumn - 1, result, used);
+                            boolean[][] usedNew = new boolean[board.length][board[0].length];
+                            for (int i = 0; i < usedNew.length; i++) {
+                                System.arraycopy(used[i], 0, usedNew[i], 0, usedNew[0].length);
+                            }
+                            usedNew[indexRow][indexColumn] = true;
+                            checkAllOrientation(board, target, index + 1, indexRow + 1, indexColumn, result, usedNew);
+                            checkAllOrientation(board, target, index + 1, indexRow - 1, indexColumn, result, usedNew);
+                            checkAllOrientation(board, target, index + 1, indexRow, indexColumn + 1, result, usedNew);
+                            checkAllOrientation(board, target, index + 1, indexRow, indexColumn - 1, result, usedNew);
                         }
                     }
                 }
