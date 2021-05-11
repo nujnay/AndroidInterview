@@ -32,8 +32,8 @@ class Solution_M_d_02 {
                         //开始进入循环
                         checkAllHorizontalMovement(board, word.toCharArray(), 1, indexRow, indexColumn + 1, result);
                         checkAllLongitudinalMovement(board, word.toCharArray(), 1, indexRow + 1, indexColumn, result);
-                        checkAllHorizontalMovementBack(board, word.toCharArray(), 1, indexRow - 1, indexColumn, result);
-                        checkAllLongitudinalMovementBack(board, word.toCharArray(), 1, indexRow, indexColumn - 1, result);
+                        checkAllHorizontalMovementBack(board, word.toCharArray(), 1, indexRow , indexColumn- 1, result);
+                        checkAllLongitudinalMovementBack(board, word.toCharArray(), 1, indexRow - 1, indexColumn, result);
                     }
                 }
             }
