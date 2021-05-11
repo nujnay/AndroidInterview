@@ -20,7 +20,8 @@ public class M_d_02 {
     }
 }
 
-//12: 16
+//14:16 16:34 两个小时写个一个遍历所有 还超时了
+//需要注意java的内存问题 数组copy问题
 class Solution_M_d_02 {
     public List<String> findWords(char[][] board, String[] words) {
         //第一排第一个 如果是 开始遍历之后的
