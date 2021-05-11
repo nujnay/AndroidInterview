@@ -49,10 +49,10 @@ class Solution_M_d_02 {
                                 return;
                             }
                             used[indexRow][indexColumn] = true;
-                            checkAllOrientation(board, target, index + 1, indexRow + 1, indexColumn, result, used);//down
-                            checkAllOrientation(board, target, index + 1, indexRow - 1, indexColumn, result, used);//up
-                            checkAllOrientation(board, target, index + 1, indexRow, indexColumn + 1, result, used);//right
-                            checkAllOrientation(board, target, index + 1, indexRow, indexColumn - 1, result, used);//left
+                            checkAllOrientation(board, target, index + 1, indexRow + 1, indexColumn, result, used);
+                            checkAllOrientation(board, target, index + 1, indexRow - 1, indexColumn, result, used);
+                            checkAllOrientation(board, target, index + 1, indexRow, indexColumn + 1, result, used);
+                            checkAllOrientation(board, target, index + 1, indexRow, indexColumn - 1, result, used);
                         }
                     }
                 }
