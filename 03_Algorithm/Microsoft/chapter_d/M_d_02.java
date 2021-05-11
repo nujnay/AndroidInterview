@@ -32,6 +32,8 @@ class Solution_M_d_02 {
                         //开始进入循环
                         checkAllHorizontalMovement(board, word.toCharArray(), 1, indexRow, indexColumn + 1, result);
                         checkAllLongitudinalMovement(board, word.toCharArray(), 1, indexRow + 1, indexColumn, result);
+                        checkAllHorizontalMovementBack(board, word.toCharArray(), 1, indexRow - 1, indexColumn, result);
+                        checkAllLongitudinalMovementBack(board, word.toCharArray(), 1, indexRow, indexColumn - 1, result);
                     }
                 }
             }
@@ -46,7 +48,7 @@ class Solution_M_d_02 {
                 if (index < target.length) {
                     char now = board[indexRow][indexColumn];
                     if (target[index] == now) {
-                        if (index == target.length) {
+                        if (index == target.length - 1) {
                             result.add(new String(target));
                         }
                     } else {
@@ -70,6 +72,43 @@ class Solution_M_d_02 {
                         }
                     } else {
                         checkAllLongitudinalMovement(board, target, index + 1, indexRow + 1, indexColumn, result);
+                    }
+                }
+            }
+        }
+    }
+
+    public void checkAllHorizontalMovementBack(char[][] board, char[] target, int index, int indexRow, int indexColumn, List<String> result) {
+        //指针向后移动
+        if (indexRow < board.length) {
+            if (indexColumn >= 0) {
+                if (index < target.length) {
+                    char now = board[indexRow][indexColumn];
+                    if (target[index] == now) {
+                        if (index == target.length - 1) {
+                            result.add(new String(target));
+                        }
+                    } else {
+                        checkAllHorizontalMovementBack(board, target, index + 1, indexRow, indexColumn - 1, result);
+                    }
+                }
+            }
+        }
+    }
+
+
+    public void checkAllLongitudinalMovementBack(char[][] board, char[] target, int index, int indexRow, int indexColumn, List<String> result) {
+        //指针向后移动
+        if (indexRow >= 0) {
+            if (indexColumn < board[0].length) {
+                if (index < target.length) {
+                    char now = board[indexRow][indexColumn];
+                    if (target[index] == now) {
+                        if (index == target.length - 1) {
+                            result.add(new String(target));
+                        }
+                    } else {
+                        checkAllLongitudinalMovementBack(board, target, index + 1, indexRow - 1, indexColumn, result);
                     }
                 }
             }
