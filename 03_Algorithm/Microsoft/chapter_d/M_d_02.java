@@ -26,7 +26,6 @@ class Solution_M_d_02 {
         List<String> result = new ArrayList<>();
         for (int indexRow = 0; indexRow < board.length; indexRow++) {
             for (int indexColumn = 0; indexColumn < board[0].length; indexColumn++) {
-                char now = board[indexRow][indexColumn];
                 for (String word : words) {
                     checkAllOrientation(board, word.toCharArray(), 0, indexRow, indexColumn, result);
                 }
