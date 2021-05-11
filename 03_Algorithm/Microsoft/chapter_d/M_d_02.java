@@ -32,7 +32,7 @@ class Solution_M_d_02 {
                         //开始进入循环
                         checkAllHorizontalMovement(board, word.toCharArray(), 1, indexRow, indexColumn + 1, result);
                         checkAllLongitudinalMovement(board, word.toCharArray(), 1, indexRow + 1, indexColumn, result);
-                        checkAllHorizontalMovementBack(board, word.toCharArray(), 1, indexRow , indexColumn- 1, result);
+                        checkAllHorizontalMovementBack(board, word.toCharArray(), 1, indexRow, indexColumn - 1, result);
                         checkAllLongitudinalMovementBack(board, word.toCharArray(), 1, indexRow - 1, indexColumn, result);
                     }
                 }
@@ -41,8 +41,27 @@ class Solution_M_d_02 {
         return result;
     }
 
+    public void checkAllOrientation(char[][] board, char[] target, int index, int indexRow, int indexColumn, List<String> result) {
+        if (indexRow < board.length && indexRow >= 0) {
+            if (indexColumn < board[0].length && indexColumn >= 0) {
+                if (index < target.length) {
+                    char now = board[indexRow][indexColumn];
+                    if (target[index] == now) {
+                        if (index == target.length - 1) {
+                            result.add(new String(target));
+                        }
+                    } else {
+                        checkAllOrientation(board, target, index + 1, indexRow + 1, indexColumn, result);
+                        checkAllOrientation(board, target, index + 1, indexRow - 1, indexColumn, result);
+                        checkAllOrientation(board, target, index + 1, indexRow, indexColumn + 1, result);
+                        checkAllOrientation(board, target, index + 1, indexRow, indexColumn - 1, result);
+                    }
+                }
+            }
+        }
+    }
+
     public void checkAllHorizontalMovement(char[][] board, char[] target, int index, int indexRow, int indexColumn, List<String> result) {
-        //指针向后移动
         if (indexRow < board.length) {
             if (indexColumn < board[0].length) {
                 if (index < target.length) {
