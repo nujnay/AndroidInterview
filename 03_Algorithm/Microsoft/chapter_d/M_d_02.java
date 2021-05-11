@@ -28,13 +28,7 @@ class Solution_M_d_02 {
             for (int indexColumn = 0; indexColumn < board[0].length; indexColumn++) {
                 char now = board[indexRow][indexColumn];
                 for (String word : words) {
-                    if (word.startsWith(now + "")) {
-                        //开始进入循环
-                        checkAllHorizontalMovement(board, word.toCharArray(), 1, indexRow, indexColumn + 1, result);
-                        checkAllLongitudinalMovement(board, word.toCharArray(), 1, indexRow + 1, indexColumn, result);
-                        checkAllHorizontalMovementBack(board, word.toCharArray(), 1, indexRow, indexColumn - 1, result);
-                        checkAllLongitudinalMovementBack(board, word.toCharArray(), 1, indexRow - 1, indexColumn, result);
-                    }
+                    checkAllOrientation(board, word.toCharArray(), 0, indexRow, indexColumn, result);
                 }
             }
         }
