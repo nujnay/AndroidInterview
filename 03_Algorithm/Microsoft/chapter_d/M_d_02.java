@@ -27,7 +27,6 @@ class Solution_M_d_02 {
         for (int indexRow = 0; indexRow < board.length; indexRow++) {
             for (int indexColumn = 0; indexColumn < board[0].length; indexColumn++) {
                 for (String word : words) {
-//                    checkAllOrientation(board, word.toCharArray(), 0, indexRow, indexColumn, result, 0);
                     checkAllOrientation(board, word.toCharArray(), 0, indexRow, indexColumn, result, new boolean[board.length][board[0].length]);
                 }
             }
