@@ -27,17 +27,17 @@ class Solution_M_d_02 {
         for (int indexRow = 0; indexRow < board.length; indexRow++) {
             for (int indexColumn = 0; indexColumn < board[0].length; indexColumn++) {
                 for (String word : words) {
-                    checkAllOrientation(board, word.toCharArray(), 0, indexRow, indexColumn, result, 0, new boolean[board.length][board[0].length]);
+                    checkAllOrientation(board, word.toCharArray(), 0, indexRow, indexColumn, result, new boolean[board.length][board[0].length]);
                 }
             }
         }
         return result;
     }
 
-    public void checkAllOrientation(char[][] board, char[] target, int index, int indexRow, int indexColumn, List<String> result, int orient, boolean[][] used) {
-        if (!used[indexRow][indexColumn]) {
-            if (indexRow < board.length && indexRow >= 0) {
-                if (indexColumn < board[0].length && indexColumn >= 0) {
+    public void checkAllOrientation(char[][] board, char[] target, int index, int indexRow, int indexColumn, List<String> result, boolean[][] used) {
+        if (indexRow < board.length && indexRow >= 0) {
+            if (indexColumn < board[0].length && indexColumn >= 0) {
+                if (!used[indexRow][indexColumn]) {
                     if (index < target.length) {
                         char now = board[indexRow][indexColumn];
                         if (now != '@') {
@@ -49,20 +49,10 @@ class Solution_M_d_02 {
                                     return;
                                 }
                                 used[indexRow][indexColumn] = true;
-                                // up:1 down:2 left:3 right:4
-                                if (orient != 1) { //up:1
-                                    checkAllOrientation(board, target, index + 1, indexRow + 1, indexColumn, result, 2, used);//down
-                                }
-                                if (orient != 2) { //down:2
-                                    checkAllOrientation(board, target, index + 1, indexRow - 1, indexColumn, result, 1, used);//up
-                                }
-                                if (orient != 3) {//left:3
-                                    checkAllOrientation(board, target, index + 1, indexRow, indexColumn + 1, result, 4, used);//right
-                                }
-                                if (orient != 4) {//right:4
-                                    checkAllOrientation(board, target, index + 1, indexRow, indexColumn - 1, result, 3, used);//left
-                                }
-
+                                checkAllOrientation(board, target, index + 1, indexRow + 1, indexColumn, result, used);//down
+                                checkAllOrientation(board, target, index + 1, indexRow - 1, indexColumn, result, used);//up
+                                checkAllOrientation(board, target, index + 1, indexRow, indexColumn + 1, result, used);//right
+                                checkAllOrientation(board, target, index + 1, indexRow, indexColumn - 1, result, used);//left
                             }
                         }
                     }
