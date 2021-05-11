@@ -42,8 +42,8 @@ class Solution_M_d_02 {
                     if (target[index] == now) {
                         if (index == target.length - 1) {
                             result.add(new String(target));
+                            return;
                         }
-                    } else {
                         checkAllOrientation(board, target, index + 1, indexRow + 1, indexColumn, result);
                         checkAllOrientation(board, target, index + 1, indexRow - 1, indexColumn, result);
                         checkAllOrientation(board, target, index + 1, indexRow, indexColumn + 1, result);
