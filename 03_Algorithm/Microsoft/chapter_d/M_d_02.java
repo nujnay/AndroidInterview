@@ -42,7 +42,6 @@ class Solution_M_d_02 {
                     if (index < target.length) {
                         char now = board[indexRow][indexColumn];
                         if (target[index] == now) {
-                            System.out.println(now + "||" + index);
                             if (index == target.length - 1) {
                                 if (!result.contains(new String(target))) {
                                     result.add(new String(target));
