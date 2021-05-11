@@ -27,14 +27,14 @@ class Solution_M_d_02 {
         for (int indexRow = 0; indexRow < board.length; indexRow++) {
             for (int indexColumn = 0; indexColumn < board[0].length; indexColumn++) {
                 for (String word : words) {
-                    checkAllOrientation(board, word.toCharArray(), 0, indexRow, indexColumn, result);
+                    checkAllOrientation(board, word.toCharArray(), 0, indexRow, indexColumn, result, 0);
                 }
             }
         }
         return result;
     }
 
-    public void checkAllOrientation(char[][] board, char[] target, int index, int indexRow, int indexColumn, List<String> result) {
+    public void checkAllOrientation(char[][] board, char[] target, int index, int indexRow, int indexColumn, List<String> result, int orient) {
         if (indexRow < board.length && indexRow >= 0) {
             if (indexColumn < board[0].length && indexColumn >= 0) {
                 if (index < target.length) {
@@ -46,17 +46,28 @@ class Solution_M_d_02 {
                             }
                             return;
                         }
-                        checkAllOrientation(board, target, index + 1, indexRow + 1, indexColumn, result);
-                        checkAllOrientation(board, target, index + 1, indexRow - 1, indexColumn, result);
-                        checkAllOrientation(board, target, index + 1, indexRow, indexColumn + 1, result);
-                        checkAllOrientation(board, target, index + 1, indexRow, indexColumn - 1, result);
+                        // up:1 down:2 left:3 right:4
+                        if (orient != 1) { //up:1
+                            checkAllOrientation(board, target, index + 1, indexRow + 1, indexColumn, result, 2);//down
+                        }
+                        if (orient != 2) { //down:2
+                            checkAllOrientation(board, target, index + 1, indexRow - 1, indexColumn, result, 1);//up
+                        }
+                        if (orient != 3) {//left:3
+                            checkAllOrientation(board, target, index + 1, indexRow, indexColumn + 1, result, 4);//right
+                        }
+                        if (orient != 4) {//right:4
+                            checkAllOrientation(board, target, index + 1, indexRow, indexColumn - 1, result, 3);//left
+                        }
+
                     }
                 }
             }
         }
     }
 
-    public void checkAllHorizontalMovement(char[][] board, char[] target, int index, int indexRow, int indexColumn, List<String> result) {
+    public void checkAllHorizontalMovement(char[][] board, char[] target, int index, int indexRow,
+                                           int indexColumn, List<String> result) {
         if (indexRow < board.length) {
             if (indexColumn < board[0].length) {
                 if (index < target.length) {
@@ -74,7 +85,8 @@ class Solution_M_d_02 {
     }
 
 
-    public void checkAllLongitudinalMovement(char[][] board, char[] target, int index, int indexRow, int indexColumn, List<String> result) {
+    public void checkAllLongitudinalMovement(char[][] board, char[] target, int index, int indexRow,
+                                             int indexColumn, List<String> result) {
         //指针向后移动
         if (indexRow < board.length) {
             if (indexColumn < board[0].length) {
@@ -92,7 +104,8 @@ class Solution_M_d_02 {
         }
     }
 
-    public void checkAllHorizontalMovementBack(char[][] board, char[] target, int index, int indexRow, int indexColumn, List<String> result) {
+    public void checkAllHorizontalMovementBack(char[][] board, char[] target, int index, int indexRow,
+                                               int indexColumn, List<String> result) {
         //指针向后移动
         if (indexRow < board.length) {
             if (indexColumn >= 0) {
@@ -111,7 +124,8 @@ class Solution_M_d_02 {
     }
 
 
-    public void checkAllLongitudinalMovementBack(char[][] board, char[] target, int index, int indexRow, int indexColumn, List<String> result) {
+    public void checkAllLongitudinalMovementBack(char[][] board, char[] target, int index, int indexRow,
+                                                 int indexColumn, List<String> result) {
         //指针向后移动
         if (indexRow >= 0) {
             if (indexColumn < board[0].length) {
