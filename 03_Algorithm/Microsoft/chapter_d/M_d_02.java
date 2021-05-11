@@ -5,18 +5,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class M_d_02 {
-    char[][] board = new char[][]{
-            {'o', 'a', 'a', 'n'},
-            {'e', 't', 'a', 'e'},
-            {'i', 'h', 'k', 'r'},
-            {'i', 'f', 'l', 'v'}};
-    String[] words = new String[]{
-            "oath",
-            "pea",
-            "eat",
-            "rain"
-    };
-
+    public static void main(String[] args) {
+        char[][] board = new char[][]{
+                {'a', 'b', 'c'},
+                {'a', 'e', 'd'},
+                {'a', 'f', 'g'}};
+        String[] words = new String[]{
+                "eaabcdgfa"
+        };
+        Solution_M_d_02 solution_m_d_02 = new Solution_M_d_02();
+        for (String s : solution_m_d_02.findWords(board, words)) {
+            System.out.println(s);
+        }
+    }
 }
 
 //12: 16
