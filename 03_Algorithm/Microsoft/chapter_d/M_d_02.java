@@ -39,27 +39,31 @@ class Solution_M_d_02 {
             if (indexColumn < board[0].length && indexColumn >= 0) {
                 if (index < target.length) {
                     char now = board[indexRow][indexColumn];
-                    if (target[index] == now) {
-                        if (index == target.length - 1) {
-                            if (!result.contains(new String(target))) {
-                                result.add(new String(target));
+                    if (now != '@') {
+                        if (target[index] == now) {
+                            if (index == target.length - 1) {
+                                if (!result.contains(new String(target))) {
+                                    result.add(new String(target));
+                                }
+                                return;
                             }
-                            return;
-                        }
-                        // up:1 down:2 left:3 right:4
-                        if (orient != 1) { //up:1
-                            checkAllOrientation(board, target, index + 1, indexRow + 1, indexColumn, result, 2);//down
-                        }
-                        if (orient != 2) { //down:2
-                            checkAllOrientation(board, target, index + 1, indexRow - 1, indexColumn, result, 1);//up
-                        }
-                        if (orient != 3) {//left:3
-                            checkAllOrientation(board, target, index + 1, indexRow, indexColumn + 1, result, 4);//right
-                        }
-                        if (orient != 4) {//right:4
-                            checkAllOrientation(board, target, index + 1, indexRow, indexColumn - 1, result, 3);//left
-                        }
+                            board[indexRow][indexColumn] = '@';
+                            char[][] boardNow = board;
+                            // up:1 down:2 left:3 right:4
+                            if (orient != 1) { //up:1
+                                checkAllOrientation(boardNow, target, index + 1, indexRow + 1, indexColumn, result, 2);//down
+                            }
+                            if (orient != 2) { //down:2
+                                checkAllOrientation(boardNow, target, index + 1, indexRow - 1, indexColumn, result, 1);//up
+                            }
+                            if (orient != 3) {//left:3
+                                checkAllOrientation(boardNow, target, index + 1, indexRow, indexColumn + 1, result, 4);//right
+                            }
+                            if (orient != 4) {//right:4
+                                checkAllOrientation(boardNow, target, index + 1, indexRow, indexColumn - 1, result, 3);//left
+                            }
 
+                        }
                     }
                 }
             }
