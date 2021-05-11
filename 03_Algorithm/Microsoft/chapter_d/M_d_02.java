@@ -40,20 +40,18 @@ class Solution_M_d_02 {
                 if (!used[indexRow][indexColumn]) {
                     if (index < target.length) {
                         char now = board[indexRow][indexColumn];
-                        if (now != '@') {
-                            if (target[index] == now) {
-                                if (index == target.length - 1) {
-                                    if (!result.contains(new String(target))) {
-                                        result.add(new String(target));
-                                    }
-                                    return;
+                        if (target[index] == now) {
+                            if (index == target.length - 1) {
+                                if (!result.contains(new String(target))) {
+                                    result.add(new String(target));
                                 }
-                                used[indexRow][indexColumn] = true;
-                                checkAllOrientation(board, target, index + 1, indexRow + 1, indexColumn, result, used);//down
-                                checkAllOrientation(board, target, index + 1, indexRow - 1, indexColumn, result, used);//up
-                                checkAllOrientation(board, target, index + 1, indexRow, indexColumn + 1, result, used);//right
-                                checkAllOrientation(board, target, index + 1, indexRow, indexColumn - 1, result, used);//left
+                                return;
                             }
+                            used[indexRow][indexColumn] = true;
+                            checkAllOrientation(board, target, index + 1, indexRow + 1, indexColumn, result, used);//down
+                            checkAllOrientation(board, target, index + 1, indexRow - 1, indexColumn, result, used);//up
+                            checkAllOrientation(board, target, index + 1, indexRow, indexColumn + 1, result, used);//right
+                            checkAllOrientation(board, target, index + 1, indexRow, indexColumn - 1, result, used);//left
                         }
                     }
                 }
