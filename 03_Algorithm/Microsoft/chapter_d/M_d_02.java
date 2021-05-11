@@ -41,7 +41,9 @@ class Solution_M_d_02 {
                     char now = board[indexRow][indexColumn];
                     if (target[index] == now) {
                         if (index == target.length - 1) {
-                            result.add(new String(target));
+                            if (!result.contains(new String(target))) {
+                                result.add(new String(target));
+                            }
                             return;
                         }
                         checkAllOrientation(board, target, index + 1, indexRow + 1, indexColumn, result);
