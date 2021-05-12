@@ -5,7 +5,7 @@ import java.lang.module.FindException;
 public class M_d_03 {
     public static void main(String[] args) {
         Solution_M_d_03 solution_m_d_03 = new Solution_M_d_03();
-        System.out.println(solution_m_d_03.isMatch("adceb", "*a*b"));
+        System.out.println(solution_m_d_03.isMatch("a", "a*"));
     }
 }
 
@@ -36,6 +36,9 @@ class Solution_M_d_03 {
             }
         }
         if (originalIndex >= original.length) {
+            if (patternIndex < pattern.length) {
+                return checkLast(pattern, patternIndex);
+            }
             return false;
         }
         if (patternIndex >= pattern.length) {
@@ -57,4 +60,14 @@ class Solution_M_d_03 {
         return false;
     }
 
+    public boolean checkLast(char[] pattern, int patternIndex) {
+        if (patternIndex < pattern.length) {
+            return true;
+        }
+        if (pattern[patternIndex] == '*') {
+            return checkLast(pattern, patternIndex);
+        } else {
+            return false;
+        }
+    }
 }
