@@ -20,6 +20,9 @@ public class M_d_03 {
 //13:52-
 class Solution_M_d_03 {
     public boolean isMatch(String s, String p) {
+        if (s.length() == 0 && p.length() == 0) {
+            return true;
+        }
         return isMatch(s.toCharArray(), p.toCharArray(), 0, 0);
     }
 
