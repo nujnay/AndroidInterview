@@ -5,13 +5,14 @@ import java.lang.module.FindException;
 public class M_d_03 {
     public static void main(String[] args) {
         Solution_M_d_03 solution_m_d_03 = new Solution_M_d_03();
-        System.out.println(solution_m_d_03.isMatch("aa", "a") + "||" + "aa" + "=" + "a" + "]" + "false");
-        System.out.println(solution_m_d_03.isMatch("aa", "*") + "||" + "aa" + "=" + "*" + "]" + "true");
-        System.out.println(solution_m_d_03.isMatch("cb", "?a") + "||" + "cb" + "=" + "?a" + "]" + "false");
-        System.out.println(solution_m_d_03.isMatch("adceb", "*a*b") + "||" + "adceb" + "=" + "*a*b" + "]" + "true");
-        System.out.println(solution_m_d_03.isMatch("acdcb", "a*c?b") + "||" + "acdcb" + "=" + "a*c?b" + "]" + "false");
-        System.out.println(solution_m_d_03.isMatch("a", "a*") + "||" + "a" + "=" + "a*" + "]" + "true");
-        System.out.println(solution_m_d_03.isMatch("", "**") + "||" + "" + "=" + "**" + "]" + "true");
+//        System.out.println(solution_m_d_03.isMatch("aa", "a") + "||" + "aa" + "=" + "a" + "]" + "false");
+//        System.out.println(solution_m_d_03.isMatch("aa", "*") + "||" + "aa" + "=" + "*" + "]" + "true");
+//        System.out.println(solution_m_d_03.isMatch("cb", "?a") + "||" + "cb" + "=" + "?a" + "]" + "false");
+//        System.out.println(solution_m_d_03.isMatch("adceb", "*a*b") + "||" + "adceb" + "=" + "*a*b" + "]" + "true");
+//        System.out.println(solution_m_d_03.isMatch("acdcb", "a*c?b") + "||" + "acdcb" + "=" + "a*c?b" + "]" + "false");
+//        System.out.println(solution_m_d_03.isMatch("a", "a*") + "||" + "a" + "=" + "a*" + "]" + "true");
+//        System.out.println(solution_m_d_03.isMatch("", "**") + "||" + "" + "=" + "**" + "]" + "true");
+        System.out.println(solution_m_d_03.isMatch("c", "*?*") + "||" + "c" + "=" + "*?*" + "]" + "true");
     }
 }
 
@@ -48,7 +49,7 @@ class Solution_M_d_03 {
                     return checkLast(pattern, patternIndex + 1);
                 }
                 if (patternNow == '*') {
-                    return checkLast(pattern, patternIndex + 1);
+                    return checkLast(pattern, patternIndex + 1) || isMatch(original, pattern, originalIndex, patternIndex + 1);
                 }
                 if (patternNow == '?') {
                     return checkLast(pattern, patternIndex + 1);
