@@ -6,6 +6,12 @@ public class M_d_03 {
     public static void main(String[] args) {
         Solution_M_d_03 solution_m_d_03 = new Solution_M_d_03();
         System.out.println(solution_m_d_03.isMatch("aa", "a"));
+        System.out.println(solution_m_d_03.isMatch("aa", "*"));
+        System.out.println(solution_m_d_03.isMatch("cb", "?a"));
+        System.out.println(solution_m_d_03.isMatch("adceb", "*a*b"));
+        System.out.println(solution_m_d_03.isMatch("acdcb", "a*c?b"));
+        System.out.println(solution_m_d_03.isMatch("a", "a*"));
+        System.out.println(solution_m_d_03.isMatch("", "**"));
     }
 }
 
