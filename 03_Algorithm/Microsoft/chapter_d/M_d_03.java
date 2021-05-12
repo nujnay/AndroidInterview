@@ -5,7 +5,7 @@ import java.lang.module.FindException;
 public class M_d_03 {
     public static void main(String[] args) {
         Solution_M_d_03 solution_m_d_03 = new Solution_M_d_03();
-        System.out.println(solution_m_d_03.isMatch("aa", "a"));
+        System.out.println(solution_m_d_03.isMatch("adceb", "*a*b"));
     }
 }
 
@@ -20,7 +20,7 @@ class Solution_M_d_03 {
         if (originalIndex == original.length - 1) {
             if (patternIndex == pattern.length - 1) {
                 char originalNow = original[originalIndex];
-                char patternNow = original[patternIndex];
+                char patternNow = pattern[patternIndex];
                 if (originalNow == patternNow) {
                     return true;
                 }
@@ -30,6 +30,8 @@ class Solution_M_d_03 {
                 if (patternNow == '?') {
                     return true;
                 }
+                return false;
+            } else {
                 return false;
             }
         }
