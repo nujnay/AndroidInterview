@@ -5,18 +5,18 @@ import java.lang.module.FindException;
 public class M_d_03 {
     public static void main(String[] args) {
         Solution_M_d_03 solution_m_d_03 = new Solution_M_d_03();
-        System.out.println(solution_m_d_03.isMatch("aa", "a"));
-        System.out.println(solution_m_d_03.isMatch("aa", "*"));
-        System.out.println(solution_m_d_03.isMatch("cb", "?a"));
-        System.out.println(solution_m_d_03.isMatch("adceb", "*a*b"));
+//        System.out.println(solution_m_d_03.isMatch("aa", "a"));
+//        System.out.println(solution_m_d_03.isMatch("aa", "*"));
+//        System.out.println(solution_m_d_03.isMatch("cb", "?a"));
+//        System.out.println(solution_m_d_03.isMatch("adceb", "*a*b"));
         System.out.println(solution_m_d_03.isMatch("acdcb", "a*c?b"));
-        System.out.println(solution_m_d_03.isMatch("a", "a*"));
-        System.out.println(solution_m_d_03.isMatch("", "**"));
+//        System.out.println(solution_m_d_03.isMatch("a", "a*"));
+//        System.out.println(solution_m_d_03.isMatch("", "**"));
     }
 }
 
 //10:11-10:30 break by work
-//10:42
+//10:42-11:15 break
 class Solution_M_d_03 {
     public boolean isMatch(String s, String p) {
         return isMatch(s.toCharArray(), p.toCharArray(), 0, 0);
