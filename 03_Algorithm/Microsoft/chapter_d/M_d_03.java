@@ -17,12 +17,14 @@ public class M_d_03 {
 
 //10:11-10:30 break by work
 //10:42-11:15 break
+//13:52-
 class Solution_M_d_03 {
     public boolean isMatch(String s, String p) {
         return isMatch(s.toCharArray(), p.toCharArray(), 0, 0);
     }
 
     public boolean isMatch(char[] original, char[] pattern, int originalIndex, int patternIndex) {
+        System.out.println(originalIndex + "||" + patternIndex);
         if (originalIndex == original.length - 1) {
             if (patternIndex == pattern.length - 1) {
                 char originalNow = original[originalIndex];
@@ -80,11 +82,11 @@ class Solution_M_d_03 {
     }
 
     public boolean checkLast(char[] pattern, int patternIndex) {
-        if (patternIndex < pattern.length) {
+        if (patternIndex == pattern.length) {
             return true;
         }
         if (pattern[patternIndex] == '*') {
-            return checkLast(pattern, patternIndex);
+            return checkLast(pattern, patternIndex + 1);
         } else {
             return false;
         }
