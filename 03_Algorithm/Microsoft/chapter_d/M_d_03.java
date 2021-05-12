@@ -44,7 +44,8 @@ class Solution_M_d_03 {
         char originalNow = original[originalIndex];
         char patternNow = pattern[patternIndex];
         if (patternNow == '*') {
-            return isMatch(original, pattern, originalIndex + 1, patternIndex);
+            return isMatch(original, pattern, originalIndex + 1, patternIndex)
+                    || isMatch(original, pattern, originalIndex + 1, patternIndex + 1);
         }
         if (patternNow == '?') {
             return isMatch(original, pattern, originalIndex + 1, patternIndex + 1);
