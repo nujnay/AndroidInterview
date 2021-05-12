@@ -12,10 +12,10 @@ class Solution_M_d_03 {
     }
 
     public boolean isMatch(char[] original, char[] pattern, int originalIndex, int patternIndex) {
-        char originalNow = original[originalIndex];
-        char patternNow = original[patternIndex];
         if (originalIndex == original.length - 1) {
             if (patternIndex == pattern.length - 1) {
+                char originalNow = original[originalIndex];
+                char patternNow = original[patternIndex];
                 if (originalNow == patternNow) {
                     return true;
                 }
@@ -32,10 +32,18 @@ class Solution_M_d_03 {
         } else if (patternIndex >= pattern.length) {
             return false;
         }
-
+        char originalNow = original[originalIndex];
+        char patternNow = original[patternIndex];
         if (patternNow == '*') {
-            isMatch(original, pattern, originalIndex + 1, patternIndex);
+            return isMatch(original, pattern, originalIndex + 1, patternIndex);
         }
+        if (patternNow == '?') {
+            return isMatch(original, pattern, originalIndex + 1, patternIndex + 1);
+        }
+        if (originalNow == patternNow) {
+            return isMatch(original, pattern, originalIndex + 1, patternIndex + 1);
+        }
+        return false;
     }
 
 }
