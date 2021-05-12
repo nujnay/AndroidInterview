@@ -5,13 +5,13 @@ import java.lang.module.FindException;
 public class M_d_03 {
     public static void main(String[] args) {
         Solution_M_d_03 solution_m_d_03 = new Solution_M_d_03();
-//        System.out.println(solution_m_d_03.isMatch("aa", "a"));
-//        System.out.println(solution_m_d_03.isMatch("aa", "*"));
-//        System.out.println(solution_m_d_03.isMatch("cb", "?a"));
-//        System.out.println(solution_m_d_03.isMatch("adceb", "*a*b"));
-        System.out.println(solution_m_d_03.isMatch("acdcb", "a*c?b"));
-//        System.out.println(solution_m_d_03.isMatch("a", "a*"));
-//        System.out.println(solution_m_d_03.isMatch("", "**"));
+        System.out.println(solution_m_d_03.isMatch("aa", "a") + "||" + "aa" + "=" + "a" + "]" + "false");
+        System.out.println(solution_m_d_03.isMatch("aa", "*") + "||" + "aa" + "=" + "*" + "]" + "true");
+        System.out.println(solution_m_d_03.isMatch("cb", "?a") + "||" + "cb" + "=" + "?a" + "]" + "false");
+        System.out.println(solution_m_d_03.isMatch("adceb", "*a*b") + "||" + "adceb" + "=" + "*a*b" + "]" + "true");
+        System.out.println(solution_m_d_03.isMatch("acdcb", "a*c?b") + "||" + "acdcb" + "=" + "a*c?b" + "]" + "false");
+        System.out.println(solution_m_d_03.isMatch("a", "a*") + "||" + "a" + "=" + "a*" + "]" + "true");
+        System.out.println(solution_m_d_03.isMatch("", "**") + "||" + "" + "=" + "**" + "]" + "true");
     }
 }
 
@@ -24,7 +24,6 @@ class Solution_M_d_03 {
     }
 
     public boolean isMatch(char[] original, char[] pattern, int originalIndex, int patternIndex) {
-        System.out.println(originalIndex + "||" + patternIndex);
         if (originalIndex == original.length - 1) {
             if (patternIndex == pattern.length - 1) {
                 char originalNow = original[originalIndex];
