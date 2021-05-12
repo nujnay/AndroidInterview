@@ -18,7 +18,7 @@ public class M_d_03 {
 
 //10:11-10:30 break by work
 //10:42-11:15 break
-//13:52-
+//13:52-14:07 超时放弃 看答案需要动态规划
 class Solution_M_d_03 {
     public boolean isMatch(String s, String p) {
         if (s.length() == 0 && p.length() == 0) {
