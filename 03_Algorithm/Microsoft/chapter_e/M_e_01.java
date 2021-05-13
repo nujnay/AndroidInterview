@@ -5,7 +5,7 @@ public class M_e_01 {
     int[] test2 = new int[]{1, 2, 3};
 
 }
-//13:55
+//14:20-14:31
 class Solution_M_e_01 {
     public int removeDuplicates(int[] nums) {
         if (nums.length == 0) {
