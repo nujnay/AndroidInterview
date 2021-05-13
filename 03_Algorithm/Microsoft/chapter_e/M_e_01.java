@@ -1,6 +1,9 @@
 package Microsoft.chapter_e;
 
 public class M_e_01 {
+    int[] test1 = new int[]{1, 1, 2, 2, 3};
+    int[] test2 = new int[]{1, 2, 3};
+
 }
 //13:55
 class Solution_M_e_01 {
@@ -12,21 +15,17 @@ class Solution_M_e_01 {
         int sum = 1;
         int indexFront = 0;
         int indexBack = 0;
-        boolean firstSame = false;
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] != now) {
-                now = nums[i];
-                sum++;
+        for (int i = 0; i < nums.length; i++) {
+            //一样的话
+            if (now == nums[indexBack]) {
                 indexBack++;
-                indexFront++;
             } else {
-                if (firstSame) {
-                    firstSame = true;
-                } else {
-
-                }
+                indexFront = indexFront + 1;
+                nums[indexFront] = nums[indexBack];
+                now = nums[indexFront];
+                indexBack++;
+                sum++;
             }
-
         }
         return sum;
     }
