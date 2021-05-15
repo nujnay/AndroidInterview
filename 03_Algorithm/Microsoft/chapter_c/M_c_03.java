@@ -6,7 +6,7 @@ import java.util.List;
 public class M_c_03 {
 
 }
-
+//20分钟以内
 class Solution_M_c_03 {
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> list = new ArrayList<>();
