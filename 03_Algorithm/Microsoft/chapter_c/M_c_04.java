@@ -75,7 +75,8 @@ class Solution_M_c_04_04 {
         boolean left = true;
         while (!queue.isEmpty()) {
             LinkedList<Integer> levelList = new LinkedList<>();
-            for (int i = 0; i < queue.size(); ++i) {
+            int size = queue.size();
+            for (int i = 0; i < size; ++i) {
                 TreeNode curNode = queue.poll();
                 if (left) {
                     levelList.offerLast(curNode.val);
