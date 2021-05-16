@@ -28,6 +28,24 @@ class Solution_M_c_04_02 {
     }
 }
 
+class Solution_M_c_04_03 {
+
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+
+        return result;
+    }
+
+    public void zigzagLevelOrder(TreeNode root, List<List<Integer>> result, int level) {
+        if (root == null) {
+            return;
+        }
+        if (level % 2 == 1) {//Odd
+
+        }
+    }
+}
+
 class Solution_M_c_04 {
     List<List<Integer>> result = new ArrayList<>();
 
