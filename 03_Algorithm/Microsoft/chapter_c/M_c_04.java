@@ -28,14 +28,7 @@ class Solution_M_c_04_02 {
     }
 }
 
-class Solution_M_c_04_04 {
-    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        List<List<Integer>> result = new ArrayList<>();
-        while()
-        return result;
-    }
-}
-//15:25 第三层就不对了
+//15:25 简单的reverse一下就行了 14：46第三层就不对了 20分钟
 class Solution_M_c_04_03 {
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
