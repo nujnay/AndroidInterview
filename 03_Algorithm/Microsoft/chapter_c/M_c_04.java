@@ -27,12 +27,12 @@ class Solution_M_c_04_02 {
         int level;
     }
 }
-
+//15:25
 class Solution_M_c_04_03 {
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
-
+        zigzagLevelOrder(root, result, 0);
         return result;
     }
 
@@ -40,8 +40,19 @@ class Solution_M_c_04_03 {
         if (root == null) {
             return;
         }
+        if (result.size() > level) {
+            result.get(level).add(root.val);
+        } else {
+            List<Integer> list2 = new ArrayList<>();
+            list2.add(root.val);
+            result.add(list2);
+        }
         if (level % 2 == 1) {//Odd
-
+            zigzagLevelOrder(root.left, result, level + 1);
+            zigzagLevelOrder(root.right, result, level + 1);
+        } else {
+            zigzagLevelOrder(root.right, result, level + 1);
+            zigzagLevelOrder(root.left, result, level + 1);
         }
     }
 }
