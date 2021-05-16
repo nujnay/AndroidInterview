@@ -27,12 +27,26 @@ class Solution_M_c_04_02 {
         int level;
     }
 }
+
+class Solution_M_c_04_04 {
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        while()
+        return result;
+    }
+}
 //15:25 第三层就不对了
 class Solution_M_c_04_03 {
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         zigzagLevelOrder(root, result, 0);
+        for (int i = 0; i < result.size(); i++) {
+            if (i % 2 == 1) {//Odd from right to left
+                List<Integer> list = result.get(i);
+                Collections.reverse(list);
+            }
+        }
         return result;
     }
 
@@ -47,13 +61,15 @@ class Solution_M_c_04_03 {
             list2.add(root.val);
             result.add(list2);
         }
-        if (level % 2 == 1) {//Odd
-            zigzagLevelOrder(root.left, result, level + 1);
-            zigzagLevelOrder(root.right, result, level + 1);
-        } else {
-            zigzagLevelOrder(root.right, result, level + 1);
-            zigzagLevelOrder(root.left, result, level + 1);
-        }
+        zigzagLevelOrder(root.left, result, level + 1);
+        zigzagLevelOrder(root.right, result, level + 1);
+//        if (level % 2 == 1) {//Odd
+//            zigzagLevelOrder(root.left, result, level + 1);
+//            zigzagLevelOrder(root.right, result, level + 1);
+//        } else {
+//            zigzagLevelOrder(root.right, result, level + 1);
+//            zigzagLevelOrder(root.left, result, level + 1);
+//        }
     }
 }
 
