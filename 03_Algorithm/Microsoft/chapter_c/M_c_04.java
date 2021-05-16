@@ -1,10 +1,7 @@
 package Microsoft.chapter_c;
 
 import java.sql.ClientInfoStatus;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class M_c_04 {
     public static void main(String[] args) {
@@ -63,6 +60,39 @@ class Solution_M_c_04_03 {
 //            zigzagLevelOrder(root.right, result, level + 1);
 //            zigzagLevelOrder(root.left, result, level + 1);
 //        }
+    }
+}
+
+class Solution_M_c_04_04 {
+
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> result = new LinkedList<>();
+        if (root == null) {
+            return result;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        boolean left = true;
+        while (!queue.isEmpty()) {
+            LinkedList<Integer> levelList = new LinkedList<>();
+            for (int i = 0; i < queue.size(); ++i) {
+                TreeNode curNode = queue.poll();
+                if (left) {
+                    levelList.offerLast(curNode.val);
+                } else {
+                    levelList.offerFirst(curNode.val);
+                }
+                if (curNode.left != null) {
+                    queue.offer(curNode.left);
+                }
+                if (curNode.right != null) {
+                    queue.offer(curNode.right);
+                }
+            }
+            result.add(new LinkedList<>(levelList));
+            left = !left;
+        }
+        return result;
     }
 }
 
