@@ -8,7 +8,7 @@ public class M_c_05 {
         System.out.println(++i);
     }
 }
-
+//14:04 14:19 十分钟这样子
 class Solution_M_c_05 {
     public Node connect(Node root) {
         if (root == null) {
