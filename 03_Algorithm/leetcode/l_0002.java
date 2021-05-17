@@ -13,7 +13,7 @@ class Solution_l_0002 {
         ListNode result = tmp;
         boolean needCarry = false;
         boolean isFirst = true;
-        while (l1 != null || l2 != null) {
+        while (l1 != null || l2 != null || needCarry) {
             int sum = (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val);
             if (isFirst) {
                 isFirst = false;
