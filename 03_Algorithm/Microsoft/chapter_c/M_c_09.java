@@ -7,7 +7,7 @@ public class M_c_09 {
 
 }
 
-//11:32-12:00sh
+//11:32-12:00
 class Solution_M_c_09 {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         TreeNode treeNode = new TreeNode();
