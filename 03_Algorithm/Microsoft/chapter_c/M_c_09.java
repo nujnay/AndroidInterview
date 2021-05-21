@@ -34,7 +34,7 @@ class Solution_M_c_09 {
 //    }
 }
 
-//15:10-
+//15:10-16:14 草 前序不是层序，搞了半天
 class Solution_M_c_09_2 {
     private Map<Integer, Integer> indexMap;
 
