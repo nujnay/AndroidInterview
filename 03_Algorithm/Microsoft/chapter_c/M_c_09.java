@@ -40,6 +40,9 @@ class Solution_M_c_09_2 {
 
     public TreeNode myBuildTree(int[] preorder, int[] inorder, int preorder_left, int preorder_right, int inorder_left, int inorder_right) {
         System.out.println(preorder_left + "|" + preorder_right + "|" + inorder_left + "|" + inorder_right);
+        /**
+         * 前序遍历的左指针 大于前序遍历右指针
+         */
         if (preorder_left > preorder_right) {
             return null;
         }
@@ -55,6 +58,10 @@ class Solution_M_c_09_2 {
         int size_left_subtree = inorder_root - inorder_left;
         // 递归地构造左子树，并连接到根节点
         // 先序遍历中「从 左边界+1 开始的 size_left_subtree」个元素就对应了中序遍历中「从 左边界 开始到 根节点定位-1」的元素
+        /**
+         * 左指针 = 前序遍历数组遍历当前位置的下一个
+         * 右指针 = 前序遍历当前位置 + (左指针数值位置在中序遍历的位置 - 0)
+         */
         root.left = myBuildTree(preorder, inorder, preorder_left + 1, preorder_left + size_left_subtree, inorder_left, inorder_root - 1);
         // 递归地构造右子树，并连接到根节点
         // 先序遍历中「从 左边界+1+左子树节点数目 开始到 右边界」的元素就对应了中序遍历中「从 根节点定位+1 到 右边界」的元素
