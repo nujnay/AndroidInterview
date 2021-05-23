@@ -14,7 +14,7 @@ public class M_c_09 {
     }
 }
 
-//11:32-12:00
+//11:32-12:00 19:06-
 class Solution_M_c_09 {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         TreeNode treeNode = new TreeNode();
@@ -41,7 +41,7 @@ class Solution_M_c_09_2 {
     public TreeNode myBuildTree(int[] preorder, int[] inorder, int preorder_left, int preorder_right, int inorder_left, int inorder_right) {
         System.out.println(preorder_left + "|" + preorder_right + "|" + inorder_left + "|" + inorder_right);
         /**
-         * 前序遍历的左指针 大于前序遍历右指针
+         * 前序遍历的左指针 大于 前序遍历右指针
          */
         if (preorder_left > preorder_right) {
             return null;
