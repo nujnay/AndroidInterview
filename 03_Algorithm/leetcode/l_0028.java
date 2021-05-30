@@ -6,11 +6,11 @@ public class l_0028 {
     }
 }
 
-//21:35
+//21:35 21：46 用递归的方法超时
 class Solution_l_0028 {
     public int strStr(String haystack, String needle) {
         char[] haystackChars = haystack.toCharArray();
-        char[] needleChars = haystack.toCharArray();
+        char[] needleChars = needle.toCharArray();
         if (haystackChars.length == 0 && needleChars.length == 0) {
             return 0;
         }
