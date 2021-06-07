@@ -1,14 +1,11 @@
 package leetcode;
 
 public class l_0541 {
-    //abcdefg
-    //bacdfeg
+
     public static void main(String[] args) {
         Solution_l_0541 solution_l_0541 = new Solution_l_0541();
-        System.out.println(solution_l_0541.reverseStr("abcd", 2));
+        System.out.println(solution_l_0541.reverseStr("abcdefg", 8));
     }
-//                System.out.println("i:" + i + ":" + "a:" + a + ":" + "b:" + b + ":" + "c:" + c);
-
 }
 
 //09：39
@@ -19,12 +16,13 @@ class Solution_l_0541 {
             int a = i / k;
             int c = a % 2;
             int b = i % k;
+            System.out.println("i:" + i + ":" + "a:" + a + ":" + "b:" + b + ":" + "c:" + c);
             if (c == 0) {
                 if (b < k / 2) {
-                    if (i + k - 1 - 2 * b < chars.length) {
+                    if (i + k - 1 - b < chars.length) {
                         char tmp = chars[i];
-                        chars[i] = chars[i + k - 1 - 2 * b];
-                        chars[i + k - 1 - 2 * b] = tmp;
+                        chars[i] = chars[i + k - 1 - b];
+                        chars[i + k - 1 - b] = tmp;
                         System.out.println(new String(chars));
                     }
                 }
