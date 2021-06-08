@@ -28,3 +28,42 @@ class Solution_l_0215 {
         return nums[nums.length - k];
     }
 }
+
+//9:54 存5个值的链表
+//class Solution_l_0215_02 {
+//    public int findKthLargest(int[] nums, int k) {
+//        Solution_l_0215_02_Node solution_l_0215_02_node = new Solution_l_0215_02_Node();
+//
+//    }
+//
+//    public void recursion(Solution_l_0215_02_Node solution_l_0215_02_node, int insert, boolean biggerLast,boolean levelPlus) {
+//        if (solution_l_0215_02_node.level == 4) {
+//            solution_l_0215_02_node.next = null;
+//            return;
+//        }
+//        if (biggerLast && insert >= solution_l_0215_02_node.level) {
+//            Solution_l_0215_02_Node nodeInsert = new Solution_l_0215_02_Node();
+//            nodeInsert.val = insert;
+//            Solution_l_0215_02_Node father = solution_l_0215_02_node.father;
+//            father.next = nodeInsert;
+//            solution_l_0215_02_node.father = nodeInsert;
+//            nodeInsert.next = solution_l_0215_02_node;
+//            nodeInsert.level = solution_l_0215_02_node.level;
+//            solution_l_0215_02_node.level = solution_l_0215_02_node.level + 1;
+//        } else {
+//            if (levelPlus) {
+//                solution_l_0215_02_node.level = solution_l_0215_02_node.level + 1;
+//            }
+//            //向后以为
+//            recursion(solution_l_0215_02_node.next, insert,)
+//        }
+//    }
+//
+//    public class Solution_l_0215_02_Node {
+//        int val;
+//        int level;
+//        Solution_l_0215_02_Node next;
+//        Solution_l_0215_02_Node father;
+//    }
+//
+//}
