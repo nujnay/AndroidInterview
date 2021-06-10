@@ -13,6 +13,7 @@ public class l_0028 {
         System.out.println(solution_l_0028_kmp_mine.strStr("abababcd", "ababcd"));
     }
 }
+
 //13：55
 class Solution_l_0028_KMP_mine {
     public int strStr(String haystack, String needle) {
@@ -22,23 +23,19 @@ class Solution_l_0028_KMP_mine {
         next[0] = 0;
         for (int i = 1; i < next.length; i++) {
             int index = 0;
-            int length = 0;
-            while (index > i / 2) {
-                if (needleC[i - index] == needleC[index]) {
-                    i = i + 1;
-                    length = length + 1;
-                } else {
-                    break;
+            while (index < i) {
+                if (checkArrayEqual(getPrefix(needleC, index + 1), getSuffix(needleC, index + 1, i))) {
+                    next[i] = index + 1;
                 }
+                index = index + 1;
             }
-            next[i] = length;
         }
-
+        System.out.println(Arrays.toString(next));
         int needleIndex = 0;
         for (int i = 0; i < haystackC.length; i++) {
             if (haystackC[i] == needleC[needleIndex]) {
                 needleIndex++;
-            }else {
+            } else {
                 //如果不一样 移动上一位的数值的下一个 如果相等继续移动 如果不等
                 needleIndex = next[needleIndex - 1] + 1;
                 if (haystackC[i] == needleC[needleIndex]) {
@@ -51,6 +48,31 @@ class Solution_l_0028_KMP_mine {
         }
         return -1;
     }
+
+    public char[] getPrefix(char[] ori, int prefixLength) {
+        char[] prefix = new char[prefixLength];
+        System.arraycopy(ori, 0, prefix, 0, prefixLength);
+        return prefix;
+    }
+
+    public char[] getSuffix(char[] ori, int suffixLength, int oriLength) {
+        char[] suffix = new char[suffixLength];
+        System.arraycopy(ori, oriLength - suffixLength + 1, suffix, 0, suffixLength);
+        System.out.println(Arrays.toString(suffix) + "|" + suffixLength + "|" + oriLength + "|");
+        return suffix;
+    }
+
+    public boolean checkArrayEqual(char[] prefix, char[] suffix) {
+        boolean allEqual = true;
+        for (int i = 0; i < prefix.length; i++) {
+            if (prefix[i] != suffix[i]) {
+                allEqual = false;
+                break;
+            }
+        }
+        return allEqual;
+    }
+
 }
 
 /**
