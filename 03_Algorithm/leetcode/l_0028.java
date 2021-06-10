@@ -8,23 +8,38 @@ public class l_0028 {
         solution_l_0028_kmp_2.strStr("cababe", "cabab");
     }
 }
+//13：55
 class Solution_l_0028_KMP_mine {
     public int strStr(String haystack, String needle) {
-        //abababcd
-        //ababcd
-        //abababcd
-        //  ababcd
         char[] haystackC = haystack.toCharArray();
         char[] needleC = needle.toCharArray();
         int[] next = new int[needleC.length];
         next[0] = 0;
         for (int i = 1; i < next.length; i++) {
-
+            int index = 0;
+            int length = 0;
+            while (index > i / 2) {
+                if (needleC[i - index] == needleC[index]) {
+                    i = i + 1;
+                    length = length + 1;
+                } else {
+                    break;
+                }
+            }
+            next[i] = length;
         }
+        //abababcd
+        //ababcd
+        //001200
+        //abababcd
+        //  ababcd
         int needleIndex = 0;
         for (int i = 0; i < haystackC.length; i++) {
             if (haystackC[i] == needleC[needleIndex]) {
                 needleIndex++;
+            }else {
+                //如果不一样 移动上一位的数值
+                needleIndex =
             }
             //如何让index = 2
             if (haystackC[i] == needleC[needleIndex]) {
