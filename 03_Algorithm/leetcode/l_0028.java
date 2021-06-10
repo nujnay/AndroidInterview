@@ -47,12 +47,17 @@ class Solution_l_0028_KMP_mine {
                 needleIndex++;
             } else {
                 //如果不一样 移动上一位的数值的下一个 如果相等继续移动 知道needleIndex = 0
-                while (needleIndex > 0) {
-                    System.out.println(needleIndex + "||" + i);
-                    needleIndex = next[needleIndex - 1] + 1;
-                    if (haystackC[i] == needleC[needleIndex]) {
-                        needleIndex++;
-                        break;
+                needleIndex = next[needleIndex - 1] + 1;
+                if (haystackC[i] == needleC[needleIndex]) {
+                    needleIndex++;
+                } else {
+                    while (needleIndex > 0) {
+                        System.out.println(needleIndex + "||" + i);
+                        needleIndex = next[needleIndex - 1];
+                        if (haystackC[i] == needleC[needleIndex]) {
+                            needleIndex++;
+                            break;
+                        }
                     }
                 }
             }
