@@ -24,7 +24,7 @@ public class l_0028 {
     }
 }
 
-//13：55 14：51
+//13：55 14：51 15:12
 class Solution_l_0028_KMP_mine {
     public int strStr(String haystack, String needle) {
         char[] haystackC = haystack.toCharArray();
@@ -40,6 +40,7 @@ class Solution_l_0028_KMP_mine {
                 index = index + 1;
             }
         }
+        System.out.println(Arrays.toString(next));
         int needleIndex = 0;
         for (int i = 0; i < haystackC.length; i++) {
             if (haystackC[i] == needleC[needleIndex]) {
