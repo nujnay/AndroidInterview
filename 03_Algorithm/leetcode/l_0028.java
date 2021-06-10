@@ -9,8 +9,11 @@ public class l_0028 {
 
         //hello
         //ll
+
+        //a
+        //a
         Solution_l_0028_KMP_mine solution_l_0028_kmp_mine = new Solution_l_0028_KMP_mine();
-        System.out.println(solution_l_0028_kmp_mine.strStr("abababcd", "ababcd"));
+        System.out.println(solution_l_0028_kmp_mine.strStr("a", "a"));
     }
 }
 
@@ -36,7 +39,7 @@ class Solution_l_0028_KMP_mine {
                 index = index + 1;
             }
         }
-//        System.out.println(Arrays.toString(next));
+        System.out.println(Arrays.toString(next));
         int needleIndex = 0;
         for (int i = 0; i < haystackC.length; i++) {
             if (haystackC[i] == needleC[needleIndex]) {
@@ -44,7 +47,7 @@ class Solution_l_0028_KMP_mine {
             } else {
                 //如果不一样 移动上一位的数值的下一个 如果相等继续移动 知道needleIndex = 0
                 if (needleIndex > 0) {
-//                    System.out.println("needleIndex:" + needleIndex + "||" + i);
+                    System.out.println("needleIndex:" + needleIndex + "||" + i);
                     needleIndex = next[needleIndex - 1] + 1;
                     if (haystackC[i] == needleC[needleIndex]) {
                         needleIndex++;
