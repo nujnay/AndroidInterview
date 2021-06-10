@@ -16,6 +16,11 @@ class Solution_l_0028_KMP_mine {
         //  ababcd
         char[] haystackC = haystack.toCharArray();
         char[] needleC = needle.toCharArray();
+        int[] next = new int[needleC.length];
+        next[0] = 0;
+        for (int i = 1; i < next.length; i++) {
+
+        }
         int needleIndex = 0;
         for (int i = 0; i < haystackC.length; i++) {
             if (haystackC[i] == needleC[needleIndex]) {
