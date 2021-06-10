@@ -40,7 +40,6 @@ class Solution_l_0028_KMP_mine {
                 index = index + 1;
             }
         }
-        System.out.println(Arrays.toString(next));
         int needleIndex = 0;
         for (int i = 0; i < haystackC.length; i++) {
             if (haystackC[i] == needleC[needleIndex]) {
@@ -48,6 +47,7 @@ class Solution_l_0028_KMP_mine {
             } else {
                 //如果不一样 移动上一位的数值的下一个 如果相等继续移动 知道needleIndex = 0
                 while (needleIndex > 0) {
+                    System.out.println(needleIndex + "||" + i);
                     needleIndex = next[needleIndex - 1] + 1;
                     if (needleIndex == 0) {
                         if (haystackC[i] == needleC[needleIndex]) {
@@ -58,11 +58,8 @@ class Solution_l_0028_KMP_mine {
                         if (haystackC[i] == needleC[needleIndex]) {
                             needleIndex++;
                             break;
-                        } else {
-                            needleIndex = next[needleIndex - 1] + 1;
                         }
                     }
-
                 }
             }
             if (needleIndex == needle.length() - 1) {
@@ -81,7 +78,6 @@ class Solution_l_0028_KMP_mine {
     public char[] getSuffix(char[] ori, int suffixLength, int oriLength) {
         char[] suffix = new char[suffixLength];
         System.arraycopy(ori, oriLength - suffixLength + 1, suffix, 0, suffixLength);
-        System.out.println(Arrays.toString(suffix) + "|" + suffixLength + "|" + oriLength + "|");
         return suffix;
     }
 
