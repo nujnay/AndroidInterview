@@ -24,7 +24,7 @@ public class l_0028 {
     }
 }
 
-//13：55
+//13：55 14：51
 class Solution_l_0028_KMP_mine {
     public int strStr(String haystack, String needle) {
         char[] haystackC = haystack.toCharArray();
