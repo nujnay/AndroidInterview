@@ -5,7 +5,27 @@ import java.util.Arrays;
 public class l_0028 {
     public static void main(String[] args) {
         Solution_l_0028_KMP_2 solution_l_0028_kmp_2 = new Solution_l_0028_KMP_2();
-        solution_l_0028_kmp_2.strStr("ababcd", "abcd");
+        solution_l_0028_kmp_2.strStr("abababcd", "ababcd");
+    }
+}
+class Solution_l_0028_KMP_mine {
+    public int strStr(String haystack, String needle) {
+        //abababcd
+        //ababcd
+        //abababcd
+        //  ababcd
+        char[] haystackC = haystack.toCharArray();
+        char[] needleC = needle.toCharArray();
+        int needleIndex = 0;
+        for (int i = 0; i < haystackC.length; i++) {
+            if (haystackC[i] == needleC[needleIndex]) {
+                needleIndex++;
+            }
+            //如何让index = 2
+            if (haystackC[i] == needleC[needleIndex]) {
+                needleIndex++;
+            }
+        }
     }
 }
 
