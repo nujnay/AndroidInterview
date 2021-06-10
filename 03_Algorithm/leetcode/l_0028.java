@@ -12,8 +12,10 @@ public class l_0028 {
 
         //a
         //a
+        //"mississippi"
+        //"issip"
         Solution_l_0028_KMP_mine solution_l_0028_kmp_mine = new Solution_l_0028_KMP_mine();
-        System.out.println(solution_l_0028_kmp_mine.strStr("a", "a"));
+        System.out.println(solution_l_0028_kmp_mine.strStr("mississippi", "issip"));
     }
 }
 
@@ -54,7 +56,7 @@ class Solution_l_0028_KMP_mine {
                     }
                 }
             }
-            if (needleIndex == needle.length() - 1) {
+            if (needleIndex > needle.length() - 1) {
                 return i - needleIndex + 1;
             }
         }
