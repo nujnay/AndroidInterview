@@ -10,7 +10,7 @@ public class l_0028 {
         //hello
         //ll
         Solution_l_0028_KMP_mine solution_l_0028_kmp_mine = new Solution_l_0028_KMP_mine();
-        System.out.println(solution_l_0028_kmp_mine.strStr("hello", "ll"));
+        System.out.println(solution_l_0028_kmp_mine.strStr("abababcd", "ababcd"));
     }
 }
 
@@ -19,6 +19,12 @@ class Solution_l_0028_KMP_mine {
     public int strStr(String haystack, String needle) {
         char[] haystackC = haystack.toCharArray();
         char[] needleC = needle.toCharArray();
+        if (haystackC.length == 0 && needleC.length == 0) {
+            return 0;
+        }
+        if (needleC.length == 0) {
+            return 0;
+        }
         int[] next = new int[needleC.length];
         next[0] = 0;
         for (int i = 1; i < next.length; i++) {
@@ -30,7 +36,7 @@ class Solution_l_0028_KMP_mine {
                 index = index + 1;
             }
         }
-        System.out.println(Arrays.toString(next));
+//        System.out.println(Arrays.toString(next));
         int needleIndex = 0;
         for (int i = 0; i < haystackC.length; i++) {
             if (haystackC[i] == needleC[needleIndex]) {
@@ -38,7 +44,7 @@ class Solution_l_0028_KMP_mine {
             } else {
                 //如果不一样 移动上一位的数值的下一个 如果相等继续移动 知道needleIndex = 0
                 if (needleIndex > 0) {
-                    System.out.println("needleIndex:" + needleIndex + "||" + i);
+//                    System.out.println("needleIndex:" + needleIndex + "||" + i);
                     needleIndex = next[needleIndex - 1] + 1;
                     if (haystackC[i] == needleC[needleIndex]) {
                         needleIndex++;
