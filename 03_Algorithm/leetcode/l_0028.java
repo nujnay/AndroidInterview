@@ -4,8 +4,13 @@ import java.util.Arrays;
 
 public class l_0028 {
     public static void main(String[] args) {
-        Solution_l_0028_KMP_2 solution_l_0028_kmp_2 = new Solution_l_0028_KMP_2();
-        solution_l_0028_kmp_2.strStr("cababe", "cabab");
+        //abababcd
+        //ababcd
+        //001200
+        //abababcd
+        //  ababcd
+        Solution_l_0028_KMP_mine solution_l_0028_kmp_mine = new Solution_l_0028_KMP_mine();
+        System.out.println(solution_l_0028_kmp_mine.strStr("abababcd", "ababcd"));
     }
 }
 //13：55
@@ -28,24 +33,20 @@ class Solution_l_0028_KMP_mine {
             }
             next[i] = length;
         }
-        //abababcd
-        //ababcd
-        //001200
-        //abababcd
-        //  ababcd
+
         int needleIndex = 0;
         for (int i = 0; i < haystackC.length; i++) {
             if (haystackC[i] == needleC[needleIndex]) {
                 needleIndex++;
             }else {
-                //如果不一样 移动上一位的数值
-                if (haystackC[i] == needleC[next[needleIndex - 1]]) {
-
+                //如果不一样 移动上一位的数值的下一个 如果相等继续移动 如果不等
+                needleIndex = next[needleIndex - 1] + 1;
+                if (haystackC[i] == needleC[needleIndex]) {
+                    needleIndex++;
                 }
             }
-            //如何让index = 2
-            if (haystackC[i] == needleC[needleIndex]) {
-                needleIndex++;
+            if (needleIndex == needle.length() - 1) {
+                return i - needleIndex + 1;
             }
         }
         return -1;
