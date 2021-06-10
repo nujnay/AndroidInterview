@@ -9,8 +9,8 @@ public class jz_45 {
  * 输出: "3033459"
  */
 }
-class Solution {
-    public String minNumber(int[] nums) {
-
-    }
-}
+//class Solution {
+//    public String minNumber(int[] nums) {
+//
+//    }
+//}
