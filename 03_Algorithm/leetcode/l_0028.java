@@ -50,15 +50,6 @@ class Solution_l_0028_KMP_mine {
                 needleIndex = next[needleIndex - 1] + 1;
                 if (haystackC[i] == needleC[needleIndex]) {
                     needleIndex++;
-                } else {
-                    while (needleIndex > 0) {
-                        System.out.println(needleIndex + "||" + i);
-                        needleIndex = next[needleIndex - 1];
-                        if (haystackC[i] == needleC[needleIndex]) {
-                            needleIndex++;
-                            break;
-                        }
-                    }
                 }
             }
             if (needleIndex == needle.length() - 1) {
@@ -90,7 +81,6 @@ class Solution_l_0028_KMP_mine {
         }
         return allEqual;
     }
-
 }
 
 /**
