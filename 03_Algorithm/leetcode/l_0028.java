@@ -49,16 +49,9 @@ class Solution_l_0028_KMP_mine {
                 while (needleIndex > 0) {
                     System.out.println(needleIndex + "||" + i);
                     needleIndex = next[needleIndex - 1] + 1;
-                    if (needleIndex == 0) {
-                        if (haystackC[i] == needleC[needleIndex]) {
-                            needleIndex++;
-                        }
+                    if (haystackC[i] == needleC[needleIndex]) {
+                        needleIndex++;
                         break;
-                    } else {
-                        if (haystackC[i] == needleC[needleIndex]) {
-                            needleIndex++;
-                            break;
-                        }
                     }
                 }
             }
