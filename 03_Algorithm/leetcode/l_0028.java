@@ -112,7 +112,7 @@ class Solution_l_0028_KMP {
                 j = next[j];
             }
             // 匹配成功的话，先让 j++
-            if (p[i] == p[j + 1]){
+            if (p[i] == p[j + 1]) {
                 j++;
             }
             // 更新 next[i]，结束本次循环，i++
@@ -122,7 +122,7 @@ class Solution_l_0028_KMP {
         // 匹配过程，i = 1，j = 0 开始，i 小于等于原串长度 【匹配 i 从 1 开始】
         for (int i = 1, j = 0; i <= n; i++) {
             // 匹配不成功 j = next(j)
-            while (j > 0 && s[i] != p[j + 1]){
+            while (j > 0 && s[i] != p[j + 1]) {
                 j = next[j];
             }
             // 匹配成功的话，先让 j++，结束本次循环后 i++
@@ -130,12 +130,42 @@ class Solution_l_0028_KMP {
                 j++;
             }
             // 整一段匹配成功，直接返回下标
-            if (j == m){
+            if (j == m) {
                 return i - m;
             }
         }
 
         return -1;
     }
+}
 
+class Solution_l_0028_KMP_2 {
+    public int strStr(String haystack, String needle) {
+        int n = haystack.length(), m = needle.length();
+        if (m == 0) {
+            return 0;
+        }
+        int[] pi = new int[m];
+        for (int i = 1, j = 0; i < m; i++) {
+            while (j > 0 && needle.charAt(i) != needle.charAt(j)) {
+                j = pi[j - 1];
+            }
+            if (needle.charAt(i) == needle.charAt(j)) {
+                j++;
+            }
+            pi[i] = j;
+        }
+        for (int i = 0, j = 0; i < n; i++) {
+            while (j > 0 && haystack.charAt(i) != needle.charAt(j)) {
+                j = pi[j - 1];
+            }
+            if (haystack.charAt(i) == needle.charAt(j)) {
+                j++;
+            }
+            if (j == m) {
+                return i - m + 1;
+            }
+        }
+        return -1;
+    }
 }
