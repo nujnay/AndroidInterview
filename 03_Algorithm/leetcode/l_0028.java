@@ -39,7 +39,9 @@ class Solution_l_0028_KMP_mine {
                 needleIndex++;
             }else {
                 //如果不一样 移动上一位的数值
-                needleIndex =
+                if (haystackC[i] == needleC[next[needleIndex - 1]]) {
+
+                }
             }
             //如何让index = 2
             if (haystackC[i] == needleC[needleIndex]) {
