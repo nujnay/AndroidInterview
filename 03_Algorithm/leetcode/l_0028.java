@@ -1,9 +1,11 @@
 package leetcode;
 
+import java.util.Arrays;
+
 public class l_0028 {
     public static void main(String[] args) {
         Solution_l_0028_KMP_2 solution_l_0028_kmp_2 = new Solution_l_0028_KMP_2();
-        solution_l_0028_kmp_2.strStr("abc", "abc");
+        solution_l_0028_kmp_2.strStr("abc", "aaabaaa");
     }
 }
 
@@ -156,7 +158,7 @@ class Solution_l_0028_KMP_2 {
             }
             pi[i] = j;
         }
-        System.out.println(pi);
+        System.out.println(Arrays.toString(pi));
         for (int i = 0, j = 0; i < n; i++) {
             while (j > 0 && haystack.charAt(i) != needle.charAt(j)) {
                 j = pi[j - 1];
