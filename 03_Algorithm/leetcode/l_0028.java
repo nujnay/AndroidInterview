@@ -20,7 +20,7 @@ public class l_0028 {
         //aaaaaecd
         //     aaabcd
         Solution_l_0028_KMP_mine solution_l_0028_kmp_mine = new Solution_l_0028_KMP_mine();
-        System.out.println(solution_l_0028_kmp_mine.strStr("abababcd", "ababcd"));
+        System.out.println(solution_l_0028_kmp_mine.strStr("aaaaaecd", "aaabcd"));
     }
 }
 
@@ -46,12 +46,23 @@ class Solution_l_0028_KMP_mine {
             if (haystackC[i] == needleC[needleIndex]) {
                 needleIndex++;
             } else {
-                //如果不一样 移动上一位的数值的下一个 如果相等继续移动
+                //如果不一样 移动上一位的数值的下一个 如果相等继续移动 知道needleIndex = 0
                 while (needleIndex > 0) {
                     needleIndex = next[needleIndex - 1] + 1;
-                    if (haystackC[i] == needleC[needleIndex]) {
-                        needleIndex++;
+                    if (needleIndex == 0) {
+                        if (haystackC[i] == needleC[needleIndex]) {
+                            needleIndex++;
+                        }
+                        break;
+                    } else {
+                        if (haystackC[i] == needleC[needleIndex]) {
+                            needleIndex++;
+                            break;
+                        } else {
+                            needleIndex = next[needleIndex - 1] + 1;
+                        }
                     }
+
                 }
             }
             if (needleIndex == needle.length() - 1) {
