@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class l_0028 {
     public static void main(String[] args) {
         Solution_l_0028_KMP_2 solution_l_0028_kmp_2 = new Solution_l_0028_KMP_2();
-        solution_l_0028_kmp_2.strStr("abababcd", "ababcd");
+        solution_l_0028_kmp_2.strStr("cababe", "cabab");
     }
 }
 class Solution_l_0028_KMP_mine {
@@ -26,6 +26,7 @@ class Solution_l_0028_KMP_mine {
                 needleIndex++;
             }
         }
+        return -1;
     }
 }
 
