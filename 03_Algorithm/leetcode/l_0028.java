@@ -44,20 +44,14 @@ class Solution_l_0028_KMP_mine {
         System.out.println(Arrays.toString(next));
         int needleIndex = 0;
         for (int i = 0; i < haystackC.length; i++) {
-            if (haystackC[i] == needleC[needleIndex]) {
-                needleIndex++;
-            } else {
-                //如果不一样 移动上一位的数值的下一个 如果相等继续移动 知道needleIndex = 0
-                if (needleIndex > 0) {
-                    System.out.println("needleIndex:" + needleIndex + "||" + i);
-                    needleIndex = next[needleIndex - 1] + 1;
-                    if (haystackC[i] == needleC[needleIndex]) {
-                        needleIndex++;
-                    }
-                }
+            while (needleIndex > 0 && haystack.charAt(i) != needle.charAt(needleIndex)) {
+                needleIndex = next[needleIndex - 1];
             }
-            if (needleIndex > needle.length() - 1) {
-                return i - needleIndex + 1;
+            if (haystack.charAt(i) == needle.charAt(needleIndex)) {
+                needleIndex++;
+            }
+            if (needleIndex == next.length) {
+                return i - next.length + 1;
             }
         }
         return -1;
