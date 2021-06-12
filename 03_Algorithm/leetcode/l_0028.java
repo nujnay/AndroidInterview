@@ -14,8 +14,8 @@ public class l_0028 {
         //a
         //"mississippi"
         //"issip"
-        Solution_l_0028_KMP_mine solution_l_0028_kmp_mine = new Solution_l_0028_KMP_mine();
-        System.out.println(solution_l_0028_kmp_mine.strStr("mississippi", "issip"));
+        Solution_l_0028_KMP_2 solution_l_0028_kmp_mine = new Solution_l_0028_KMP_2();
+        System.out.println(solution_l_0028_kmp_mine.strStr("abababcd", "ababcd"));
     }
 }
 
@@ -193,7 +193,7 @@ class Solution_l_0028_KMP {
             // 更新 next[i]，结束本次循环，i++
             next[i] = j;
         }
-
+        System.out.println(Arrays.toString(next));
         // 匹配过程，i = 1，j = 0 开始，i 小于等于原串长度 【匹配 i 从 1 开始】
         for (int i = 1, j = 0; i <= n; i++) {
             // 匹配不成功 j = next(j)
@@ -223,6 +223,7 @@ class Solution_l_0028_KMP_2 {
         int[] pi = new int[m];
         for (int i = 1, j = 0; i < m; i++) {
             while (j > 0 && needle.charAt(i) != needle.charAt(j)) {
+                System.out.println("i" + i + "||j:" + j + Arrays.toString(pi));
                 j = pi[j - 1];
             }
             if (needle.charAt(i) == needle.charAt(j)) {
