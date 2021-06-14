@@ -9,7 +9,7 @@ public class l_0704 {
     }
 }
 
-//12:15
+//12:15 12:39
 class Solution_l_0704 {
     public int search(int[] nums, int target) {
         if (nums.length == 0) {
