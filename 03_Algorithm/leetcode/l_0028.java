@@ -7,12 +7,6 @@ public class l_0028 {
         //abababcd
         //ababcd
 
-        //hello
-        //ll
-
-        //a
-        //a
-        //"mississippi"
         //"issip"
         Solution_l_0028_KMP_2 solution_l_0028_kmp_mine = new Solution_l_0028_KMP_2();
         System.out.println(solution_l_0028_kmp_mine.strStr("abababcd", "ababcd"));
