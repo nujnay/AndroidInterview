@@ -1,11 +1,11 @@
 package leetcode;
 
 public class l_0704 {
-    //[-1,0,3,5,9,12]
-    //9
+    //[-1,0,5]
+    //5
     public static void main(String[] args) {
         Solution_l_0704 solution_l_0704 = new Solution_l_0704();
-        System.out.println(solution_l_0704.search(new int[]{-1, 0, 3, 5, 9, 12}, 9));
+        System.out.println(solution_l_0704.search(new int[]{-1,0,5}, 5));
     }
 }
 
@@ -26,15 +26,29 @@ class Solution_l_0704 {
             if (nums[half] > target) {
                 endIndex = half;
                 half = (half - startIndex) / 2 + startIndex;
-                if (startIndex >= half) {
+                if (startIndex > half) {
                     next = false;
+                }
+                if (endIndex == half) {
+                    if (nums[half] == target) {
+                        return half;
+                    } else {
+                        next = false;
+                    }
                 }
             }
             if (nums[half] < target) {
                 startIndex = half;
                 half = (endIndex - half) / 2 + startIndex;
-                if (endIndex <= half) {
+                if (endIndex < half) {
                     next = false;
+                }
+                if (startIndex == half) {
+                    if (nums[half] == target) {
+                        return half;
+                    } else {
+                        next = false;
+                    }
                 }
             }
         }
