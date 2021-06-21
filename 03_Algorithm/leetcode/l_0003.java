@@ -6,7 +6,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class l_0003 {
-
+    public static void main(String[] args) {
+        Solution_l_0003 solution_l_0003 = new Solution_l_0003();
+        solution_l_0003.lengthOfLongestSubstring(new String(""));
+    }
 }
 
 //14:07
