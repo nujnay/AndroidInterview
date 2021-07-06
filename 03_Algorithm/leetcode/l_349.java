@@ -9,11 +9,11 @@ import java.util.HashSet;
  * @create: 2021-07-06 16:53
  * 给定两个数组，编写一个函数来计算它们的交集。
  * 示例 1：
- *
+ * <p>
  * 输入：nums1 = [1,2,2,1], nums2 = [2,2]
  * 输出：[2]
  * 示例 2：
- *
+ * <p>
  * 输入：nums1 = [4,9,5], nums2 = [9,4,9,8,4]
  * 输出：[9,4]
  **/
@@ -22,24 +22,28 @@ public class l_349 {
 
 class Solution_l_349 {
     public int[] intersection(int[] nums1, int[] nums2) {
-        HashSet<Integer> hashSet = new HashSet<>();
+        int[] ints = new int[Math.min(nums1.length, nums2.length)];
+        int p = 0;
         for (int one : nums1) {
-            hashSet.add(one);
-        }
-        int[] ints = new int[Math.max(nums1.length, nums2.length)];
-        int i = 0;
-        for (int one : nums2) {
-            if (hashSet.contains(one)) {
-                ints[i] = one;
-                i++;
+            for (int two : nums2) {
+                if (one == two) {
+                    boolean noNow = true;
+                    for (int i = 0; i < p; i++) {
+                        int three = ints[i];
+                        if (three == one) {
+                            noNow = false;
+                            break;
+                        }
+                    }
+                    if (noNow) {
+                        ints[p] = one;
+                        p++;
+                    }
+                }
             }
         }
-        if (i == 0) {
-            return new int[0];
-        } else {
-            int[] result = new int[i];
-            System.arraycopy(ints, 0, result, 0, i);
-            return result;
-        }
+        int[] result = new int[p];
+        System.arraycopy(ints, 0, result, 0, p);
+        return result;
     }
 }
