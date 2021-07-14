@@ -28,14 +28,14 @@ class Solution_js_10 {
         if (n == 1) {
             return 1;
         }
-        return fib1(2, n, 1, 0);
+        return fib(2, n, 1, 0);
     }
 
-    public int fib1(int now, int n, int last, int lastlast) {
+    public int fib(int now, int n, int last, int lastlast) {
         if (now == n) {
             return (last % 1000000007 + lastlast % 1000000007) % 1000000007;
         }
-        return fib1(now + 1, n, (last + lastlast) % 1000000007, last % 1000000007);
+        return fib(now + 1, n, (last + lastlast) % 1000000007, last % 1000000007);
     }
 }
 
