@@ -25,8 +25,8 @@ public class l_0405 {
  *     }
  * }
  */
-class Solution_l_0405 {
-    public TreeNode deleteNode(TreeNode root, int key) {
-
-    }
-}
+//class Solution_l_0405 {
+//    public TreeNode deleteNode(TreeNode root, int key) {
+//
+//    }
+//}
