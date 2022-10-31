@@ -25,5 +25,27 @@ Constraints:
 
  */
 public class N1480 {
+    public static void main(String[] args) {
+        N1480 n1480 = new N1480();
+        int[] result = n1480.runningSum(new int[]{1, 1, 1, 1});
+        System.out.println(result);
+    }
+    public int[] runningSum(int[] nums) {
+        int[] result = new int[nums.length];
+        recursion(0, nums, result);
+        return result;
+    }
 
+    public void recursion(int index, int[] origin, int[] result) {
+        if (index == result.length) {
+            return;
+        }
+        if (index == 0) {
+            result[index] = origin[index];
+        } else {
+            int resultIndex = origin[index] + result[index - 1];
+            result[index] = resultIndex;
+        }
+        recursion(index + 1, origin, result);
+    }
 }
