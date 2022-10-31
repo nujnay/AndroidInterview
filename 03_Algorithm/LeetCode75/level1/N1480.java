@@ -27,8 +27,9 @@ Constraints:
 public class N1480 {
     public static void main(String[] args) {
         N1480 n1480 = new N1480();
-        int[] result = n1480.runningSum(new int[]{1, 1, 1, 1});
-        System.out.println(result);
+        int[] result = n1480.runningSum(new int[]{1, 2, 3, 4});
+        PrintTools.printIntArray(result);
+
     }
     public int[] runningSum(int[] nums) {
         int[] result = new int[nums.length];
