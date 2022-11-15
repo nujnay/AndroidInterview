@@ -25,10 +25,10 @@ Constraints:
 -10^6 <= nums[i] <= 10^6
 
  */
-public class N1480 {
+public class N_22_10_31_1480 {
     public static void main(String[] args) {
-        N1480 n1480 = new N1480();
-        int[] result = n1480.runningSum(new int[]{1, 2, 3, 4});
+        N_22_10_31_1480 n2210311480 = new N_22_10_31_1480();
+        int[] result = n2210311480.runningSum(new int[]{1, 2, 3, 4});
         PrintTools.printIntArray(result);
 
     }

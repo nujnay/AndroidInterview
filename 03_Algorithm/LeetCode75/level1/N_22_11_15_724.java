@@ -40,6 +40,6 @@ Constraints:
 -1000 <= nums[i] <= 1000
 
  */
-public class N724 {
+public class N_22_11_15_724 {
 
 }
